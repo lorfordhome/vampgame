@@ -1,20 +1,22 @@
 using System.Collections;
 using System.Collections.Generic;
+using System;
 using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
 {
-    Rigidbody2D body;
+    public Rigidbody2D body;
 
     float horizontal;
     float vertical;
     float moveLimiter = 1.4142f; //root two (we love pythagoras)
     public Animator animator;
-    public float runSpeed = 20.0f;
+    public float runSpeed = 10.0f;
+    public GameObject firePoint;
     void Start()
     {
         body = GetComponent<Rigidbody2D>();
- 
+
     }
 
     void Update()
@@ -40,7 +42,7 @@ public class PlayerMovement : MonoBehaviour
         {
             transform.localRotation = Quaternion.Euler(0, 0, 0);
         }
-  
+        firePoint.GetComponent<Rigidbody2D>().position = body.position;
     }
 
     void FixedUpdate()
@@ -51,19 +53,8 @@ public class PlayerMovement : MonoBehaviour
             horizontal /= moveLimiter;
             vertical /= moveLimiter;
         }
-
+   
         body.velocity = new Vector2(horizontal * runSpeed, vertical * runSpeed);
-        PreventLeavingScreen();
-    }
-
-    //wip function
-    private void PreventLeavingScreen()
-    {
-        float mapboundx = GameObject.FindGameObjectWithTag("background").GetComponent<SpriteRenderer>().bounds.size.x;
-        if (transform.position.x > mapboundx)
-        {
-            body.velocity = new Vector2(0, body.velocity.y);
-        }
     }
 
 }
