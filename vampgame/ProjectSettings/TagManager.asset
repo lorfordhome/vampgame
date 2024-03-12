@@ -7,6 +7,8 @@ TagManager:
   - background
   - Collidable
   - boundary
+  - projectile
+  - Enemy
   layers:
   - Default
   - TransparentFX
@@ -16,7 +18,7 @@ TagManager:
   - UI
   - Player
   - Boundary
-  - 
+  - Projectile
   - 
   - 
   - 
@@ -52,4 +54,7 @@ TagManager:
     locked: 0
   - name: Player
     uniqueID: 3341689057
+    locked: 0
+  - name: Projectiles
+    uniqueID: 2205609413
     locked: 0

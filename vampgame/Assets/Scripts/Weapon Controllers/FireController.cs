@@ -13,7 +13,7 @@ public class FireController : ProjectileManager
     protected override void Attack()
     {
         base.Attack();
-        GameObject spawnedProjectile = Instantiate(prefab);
+        GameObject spawnedProjectile = Instantiate(weaponData.Prefab);
         spawnedProjectile.transform.position = transform.position; //assign the position to be the same as this object 
         spawnedProjectile.transform.rotation = fp.transform.rotation;
         spawnedProjectile.GetComponent<FireBehaviour>().DirectionChecker(fp.projdirection);

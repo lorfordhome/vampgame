@@ -14,14 +14,6 @@ public class FireBehaviour : ProjectileBehaviour
 
     void Update()
     {
-        transform.position += direction * fc.speed * Time.deltaTime; //set the movement of the knife
-    }
-    void OnTriggerEnter2D(Collider2D other)
-    {
-        if (other.gameObject.tag=="Collidable")
-        {
-            Debug.Log("collision");
-            this.gameObject.SetActive(false);
-        }
+        transform.position += direction * weaponData.Speed * Time.deltaTime; //set the movement of the fire
     }
 }

@@ -5,18 +5,14 @@ using UnityEngine;
 //Base script for all weapon controllers
 public class ProjectileManager : MonoBehaviour
 {
-    //base projectile class
-    public GameObject prefab;
-    public float speed;
-    public float size;
-    public float damage;
-    public float cooldownDuration;
-    float currentCooldown;
+    [Header("Weapon Stats")]
+    public WeaponScriptableObject weaponData;
     protected FirePoint fp;
+    float currentCooldown;
     protected virtual void Start()
     {
         fp=FindObjectOfType<FirePoint>();
-        currentCooldown = cooldownDuration;
+        currentCooldown = weaponData.CooldownDuration;
     }
     // Update is called once per frame
     protected virtual void Update()
@@ -30,6 +26,6 @@ public class ProjectileManager : MonoBehaviour
 
     protected virtual void Attack()
     {
-        currentCooldown = cooldownDuration;
+        currentCooldown = weaponData.CooldownDuration;
     }
 }
