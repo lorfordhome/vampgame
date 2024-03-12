@@ -1,3 +1,4 @@
+using UnityEditor.SearchService;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -29,6 +30,12 @@ public class Menu : MonoBehaviour
 		SceneManager.LoadScene(0);
 		Debug.Log("Home");
 	}
+
+	public void ControlsButton()
+	{
+		SceneManager.LoadScene(3);
+	}
+
 	public void QuitButton()
 	{
 		Application.Quit();
