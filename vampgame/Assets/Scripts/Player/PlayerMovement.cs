@@ -11,8 +11,8 @@ public class PlayerMovement : MonoBehaviour
     float vertical;
     float moveLimiter = 1.4142f; //root two (we love pythagoras)
     public Animator animator;
-    public float runSpeed = 10.0f;
     public GameObject firePoint;
+    public CharacterScriptableObject characterData;
     void Start()
     {
         body = GetComponent<Rigidbody2D>();
@@ -54,7 +54,7 @@ public class PlayerMovement : MonoBehaviour
             vertical /= moveLimiter;
         }
    
-        body.velocity = new Vector2(horizontal * runSpeed, vertical * runSpeed);
+        body.velocity = new Vector2(horizontal * characterData.MoveSpeed, vertical * characterData.MoveSpeed);
     }
 
 }

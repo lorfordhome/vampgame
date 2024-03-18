@@ -137,6 +137,7 @@ GameObject:
   - component: {fileID: 60750436}
   - component: {fileID: 60750440}
   - component: {fileID: 60750441}
+  - component: {fileID: 60750442}
   m_Layer: 6
   m_Name: Player
   m_TagString: Untagged
@@ -158,8 +159,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   body: {fileID: 60750437}
   animator: {fileID: 60750440}
-  runSpeed: 7
   firePoint: {fileID: 629181041}
+  characterData: {fileID: 11400000, guid: d19657e44c15ffa459ce8d2b9de0ae27, type: 2}
 --- !u!50 &60750437
 Rigidbody2D:
   serializedVersion: 4
@@ -321,6 +322,38 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.24, y: 1.15}
   m_EdgeRadius: 0
+--- !u!114 &60750442
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 60750435}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 41b8a174b6dc6b4478e197466ec7d385, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  characterData: {fileID: 11400000, guid: d19657e44c15ffa459ce8d2b9de0ae27, type: 2}
+  experience: 0
+  level: 1
+  experienceCap: 100
+  levelRanges:
+  - startLevel: 1
+    endLevel: 3
+    experienceCapIncrease: 100
+  - startLevel: 4
+    endLevel: 9
+    experienceCapIncrease: 200
+  - startLevel: 10
+    endLevel: 20
+    experienceCapIncrease: 300
+  - startLevel: 30
+    endLevel: 40
+    experienceCapIncrease: 400
+  - startLevel: 40
+    endLevel: 999
+    experienceCapIncrease: 500
 --- !u!1 &519420028
 GameObject:
   m_ObjectHideFlags: 0
@@ -824,7 +857,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -394487373
-  m_SortingLayer: 2
+  m_SortingLayer: 1
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: a3e0b96829451f84886ef79d52eb637e, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
