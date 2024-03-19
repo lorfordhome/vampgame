@@ -4,5 +4,8 @@ using UnityEngine;
 
 public interface I_collectible
 {
-
+   void Collect()
+    {
+        Debug.Log("Collectible error");
+    }
 }

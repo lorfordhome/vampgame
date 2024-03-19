@@ -20,7 +20,7 @@ public class DropRateManager : MonoBehaviour
         List<Drops> possibleDrops= new List<Drops>();
         foreach (Drops rate in drops)
         {
-            if (randomNumber>rate.dropRate)
+            if (randomNumber<rate.dropRate)
             {
                 possibleDrops.Add(rate);
             }

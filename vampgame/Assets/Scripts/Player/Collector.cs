@@ -4,15 +4,12 @@ using UnityEngine;
 
 public class Collector : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    private void OnTriggerEnter2D(Collider2D col)
     {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
+        //checks if the other object is a collectible
+        if (col.gameObject.TryGetComponent(out I_collectible collectible))
+        {
+            collectible.Collect();
+        }
     }
 }

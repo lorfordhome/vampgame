@@ -10,5 +10,6 @@ public class NewBehaviourScript : MonoBehaviour, I_collectible
         PlayerStats player=FindObjectOfType<PlayerStats>();
         player.IncreaseExperience(experienceGranted);
         Destroy(gameObject);
+        Debug.Log("EXP Collected");
     }
 }
