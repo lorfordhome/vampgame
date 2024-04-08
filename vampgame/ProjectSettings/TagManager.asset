@@ -7,8 +7,6 @@ TagManager:
   - background
   - Collidable
   - boundary
-  - projectile
-  - Enemy
   layers:
   - Default
   - TransparentFX
@@ -18,7 +16,7 @@ TagManager:
   - UI
   - Player
   - Boundary
-  - Projectile
+  - Foreground
   - 
   - 
   - 
@@ -46,15 +44,12 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
+  - name: Boundary
+    uniqueID: 1216995979
+    locked: 0
   - name: Background
     uniqueID: 3900479923
     locked: 0
-  - name: Lower midground (pickups)
-    uniqueID: 683843595
-    locked: 0
-  - name: Midground (Player)
+  - name: Player
     uniqueID: 3341689057
-    locked: 0
-  - name: Foreground
-    uniqueID: 2205609413
     locked: 0
