@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: efe474e44edec694189414d1617bc3e4, type: 3}
   m_Name: Jerma
   m_EditorClassIdentifier: 
-  startingWeapon: {fileID: 0}
+  startingWeapon: {fileID: 8831150149325047858, guid: 56b292e7d31dcbc4790e0f9840364aab, type: 3}
   maxHealth: 100
   recovery: 0
   moveSpeed: 10
