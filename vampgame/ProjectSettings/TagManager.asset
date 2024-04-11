@@ -7,6 +7,7 @@ TagManager:
   - background
   - Collidable
   - boundary
+  - Enemy
   layers:
   - Default
   - TransparentFX
@@ -44,12 +45,15 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
-  - name: Boundary
+  - name: Background
     uniqueID: 1216995979
     locked: 0
-  - name: Background
+  - name: Lower midgroudn (pickups)
     uniqueID: 3900479923
     locked: 0
-  - name: Player
+  - name: Midground (player)
     uniqueID: 3341689057
+    locked: 0
+  - name: Foreground
+    uniqueID: 3827703989
     locked: 0

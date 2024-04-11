@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: -936226749353230505}
   - component: {fileID: 8366271980343696660}
   m_Layer: 0
-  m_Name: BatEnemy
+  m_Name: Bruiser
   m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -78,7 +78,7 @@ SpriteRenderer:
   m_SortingLayer: 3
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: d0db4ced8402d3844a90dd3709be00b1, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 1, g: 0, b: 0, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -100,7 +100,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c164fd2f226d91548b5538602ea29b9a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemyData: {fileID: 11400000, guid: 9baf10dd0afa7064596baf5bb2a9847c, type: 2}
+  enemyData: {fileID: 11400000, guid: 7584cf2ffc1d7e840b4f3a6a945d0f0f, type: 2}
 --- !u!114 &-489735020881349021
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -113,8 +113,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3ba40363bbb0e894882e795f146e9ca2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemyData: {fileID: 11400000, guid: 9baf10dd0afa7064596baf5bb2a9847c, type: 2}
-  despawnDistance: 20
+  enemyData: {fileID: 11400000, guid: 7584cf2ffc1d7e840b4f3a6a945d0f0f, type: 2}
 --- !u!61 &-936226749353230505
 BoxCollider2D:
   m_ObjectHideFlags: 0
