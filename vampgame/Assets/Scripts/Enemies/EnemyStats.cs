@@ -5,9 +5,12 @@ using UnityEngine;
 public class EnemyStats : MonoBehaviour
 {
     public EnemyScriptableObject enemyData;
-    float currentMoveSpeed;
-    float currentHealth;
-    float currentDamage;
+    [HideInInspector]
+    public float currentMoveSpeed;
+    [HideInInspector]
+    public float currentHealth;
+    [HideInInspector]
+    public float currentDamage;
 
     public float despawnDistance = 20f;
     Transform player;
@@ -48,6 +51,7 @@ public class EnemyStats : MonoBehaviour
         if (col.gameObject.CompareTag("Player"))
         {
             PlayerStats player = col.gameObject.GetComponent<PlayerStats>();
+            Debug.Log("enemy hit player");
             player.TakeDamage(currentDamage);
         }
     }

@@ -9,10 +9,12 @@ public class ProjectileManager : MonoBehaviour
     public WeaponScriptableObject weaponData;
     protected FirePoint fp;
     float currentCooldown;
+    AudioSource soundEffect;
     protected virtual void Start()
     {
         fp=FindObjectOfType<FirePoint>();
         currentCooldown = weaponData.CooldownDuration;
+        soundEffect = GetComponent<AudioSource>();
     }
     // Update is called once per frame
     protected virtual void Update()
@@ -27,5 +29,6 @@ public class ProjectileManager : MonoBehaviour
     protected virtual void Attack()
     {
         currentCooldown = weaponData.CooldownDuration;
+        soundEffect.Play();
     }
 }

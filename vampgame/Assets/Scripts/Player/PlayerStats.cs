@@ -2,15 +2,22 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PlayerStats : MonoBehaviour
 {
+    [SerializeField] private Healthbar _healthbar;
     public CharacterScriptableObject characterData;
     //current stats
+    [HideInInspector]
     public float currentHealth;
+    [HideInInspector]
     public float currentRecovery;
+    [HideInInspector]
     public float currentMoveSpeed;
+    [HideInInspector]
     public float currentMight;
+    [HideInInspector]
     public float currentProjectileSpeed;
 
     //experience and levelling
@@ -19,7 +26,6 @@ public class PlayerStats : MonoBehaviour
     public int level = 1;
     public int experienceCap;
     public TextMeshProUGUI exp_text;
-    public TextMeshProUGUI hp_text;
     public TextMeshProUGUI lvl_text;
 
     //I-frames
@@ -73,6 +79,7 @@ public class PlayerStats : MonoBehaviour
         if (!isInvincible)
         {
             currentHealth -= dmg;
+            _healthbar.UpdateHealthBar(characterData.MaxHealth, currentHealth);
             invincibilityTimer = invincibilityDuration;
             isInvincible = true;
             if (currentHealth <= 0)
@@ -85,11 +92,11 @@ public class PlayerStats : MonoBehaviour
     public void Kill()
     {
         Debug.Log("PLAYER DEAD");
+        SceneManager.LoadScene("Game_Over");
     }
     private void Update()
     {
         exp_text.text = "EXP: " + experience + "/"+experienceCap;
-        hp_text.text = "Health: " + currentHealth + "/" + characterData.MaxHealth;
         lvl_text.text = "Level: " + level;
         if (invincibilityTimer > 0)
         {
@@ -109,5 +116,6 @@ public class PlayerStats : MonoBehaviour
         currentMoveSpeed = characterData.MoveSpeed;
         currentMight = characterData.Might;
         currentProjectileSpeed = characterData.ProjectileSpeed;
+        _healthbar.UpdateHealthBar(characterData.MaxHealth, currentHealth);
     }
 }
