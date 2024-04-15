@@ -28,20 +28,19 @@ public class PlayerMovement : MonoBehaviour
         // animation control. checks if the player is moving or not
         if (horizontal==0 && vertical==0)
         {
-            animator.SetBool("walking", false);
-        }
-        else
-        {
-            animator.SetBool("walking", true);
+            animator.SetBool("walkingleft", false);
+            animator.SetBool("walkingright", false);
         }
         //sets direction of sprite
         if (horizontal == -1)
         {
-            transform.localRotation = Quaternion.Euler(0, 180, 0);
+            animator.SetBool("walkingright", false);
+            animator.SetBool("walkingleft", true);
         }
         if (horizontal == 1)
         {
-            transform.localRotation = Quaternion.Euler(0, 0, 0);
+            animator.SetBool("walkingleft", false);
+            animator.SetBool("walkingright", true);
         }
         firePoint.GetComponent<Rigidbody2D>().position = body.position;
     }

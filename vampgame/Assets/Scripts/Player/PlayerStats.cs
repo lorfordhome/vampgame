@@ -7,6 +7,7 @@ using UnityEngine.SceneManagement;
 public class PlayerStats : MonoBehaviour
 {
     [SerializeField] private Healthbar _healthbar;
+    [SerializeField] private Healthbar _expbar;
     public CharacterScriptableObject characterData;
     //current stats
     [HideInInspector]
@@ -25,8 +26,6 @@ public class PlayerStats : MonoBehaviour
     public int experience = 0;
     public int level = 1;
     public int experienceCap;
-    public TextMeshProUGUI exp_text;
-    public TextMeshProUGUI lvl_text;
 
     //I-frames
     [Header("I-Frames")]
@@ -47,6 +46,7 @@ public class PlayerStats : MonoBehaviour
     {
         //initialises the experience cap
         experienceCap = levelRanges[0].experienceCapIncrease;
+        _expbar.UpdateHealthBar(experienceCap, experience);
     }
     public void IncreaseExperience(int amount)
     {
@@ -71,6 +71,9 @@ public class PlayerStats : MonoBehaviour
             }
             experienceCap += experienceCapIncrease;
         }
+        Debug.Log(experience);
+        Debug.Log(experienceCap);
+        _expbar.UpdateHealthBar(experienceCap, experience);
     }
 
     public void TakeDamage(float dmg)
@@ -96,8 +99,6 @@ public class PlayerStats : MonoBehaviour
     }
     private void Update()
     {
-        exp_text.text = "EXP: " + experience + "/"+experienceCap;
-        lvl_text.text = "Level: " + level;
         if (invincibilityTimer > 0)
         {
             invincibilityTimer -= Time.deltaTime;

@@ -291,7 +291,7 @@ SpriteRenderer:
   m_SortingLayerID: -953278239
   m_SortingLayer: 3
   m_SortingOrder: 0
-  m_Sprite: {fileID: 1695542016, guid: 7af37369bd8a70e4c97f7f222dbd6a70, type: 3}
+  m_Sprite: {fileID: 1252681649, guid: e984e0be9cc35af459d91fc8b12a3f47, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -311,9 +311,10 @@ Transform:
   m_GameObject: {fileID: 60750435}
   m_LocalRotation: {x: 0.017450457, y: -0.026176855, z: 0.000076157616, w: 0.99950504}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1.5, y: 1.5, z: 1.5}
+  m_LocalScale: {x: 0.8, y: 0.8, z: 0.8}
   m_ConstrainProportionsScale: 1
   m_Children:
+  - {fileID: 626527877}
   - {fileID: 1366014683}
   - {fileID: 1573681980}
   m_Father: {fileID: 0}
@@ -375,8 +376,8 @@ BoxCollider2D:
   m_Offset: {x: 0, y: 0}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 0.24, y: 1.15}
+    pivot: {x: 0.5350877, y: 0.5}
+    oldSize: {x: 1.14, y: 3.1}
     newSize: {x: 2.17, y: 4.59}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -919,6 +920,148 @@ MonoBehaviour:
     mipBias: 0
     varianceClampScale: 0.9
     contrastAdaptiveSharpening: 0
+--- !u!1 &626527876
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 626527877}
+  - component: {fileID: 626527879}
+  - component: {fileID: 626527878}
+  m_Layer: 6
+  m_Name: MeleeController
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &626527877
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 626527876}
+  m_LocalRotation: {x: -0, y: -0, z: 2.9103827e-11, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 60750439}
+  m_RootOrder: -1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &626527878
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 626527876}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f9374f2cc0a917c4b894f4fd91663060, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  weaponData: {fileID: 0}
+--- !u!82 &626527879
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 626527876}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: c2da9a10463de5844ac09576183d8f1c, type: 3}
+  m_PlayOnAwake: 0
+  m_Volume: 0.397
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!1 &629181041
 GameObject:
   m_ObjectHideFlags: 0
@@ -1642,14 +1785,36 @@ MonoBehaviour:
   - waveName: Wave 1
     enemyGroups:
     - enemyName: Bat
-      enemyCount: 5
+      enemyCount: 15
+      spawnCount: 0
+      enemyPrefab: {fileID: 7601273786654332976, guid: 1fddbe91836873841979dc9f714e3d53, type: 3}
+    waveQuota: 0
+    spawnInterval: 3
+    spawnCount: 0
+  - waveName: Wave 2
+    enemyGroups:
+    - enemyName: Bruiser
+      enemyCount: 1
+      spawnCount: 0
+      enemyPrefab: {fileID: 7601273786654332976, guid: c8b6cd4c915de7a469bbb1b56a98fdbd, type: 3}
+    waveQuota: 0
+    spawnInterval: 1
+    spawnCount: 0
+  - waveName: Wave 3
+    enemyGroups:
+    - enemyName: Bat
+      enemyCount: 10
       spawnCount: 0
       enemyPrefab: {fileID: 7601273786654332976, guid: 1fddbe91836873841979dc9f714e3d53, type: 3}
     waveQuota: 0
     spawnInterval: 1
     spawnCount: 0
-  - waveName: Wave 2
+  - waveName: Wave 4
     enemyGroups:
+    - enemyName: Bat
+      enemyCount: 10
+      spawnCount: 0
+      enemyPrefab: {fileID: 7601273786654332976, guid: 1fddbe91836873841979dc9f714e3d53, type: 3}
     - enemyName: Bruiser
       enemyCount: 3
       spawnCount: 0
@@ -1658,9 +1823,9 @@ MonoBehaviour:
     spawnInterval: 1
     spawnCount: 0
   currentWaveCount: 0
-  waveInterval: 3
+  waveInterval: 6
   enemiesAlive: 0
-  maxEnemiesAllowed: 4
+  maxEnemiesAllowed: 10
   maxEnemiesReached: 0
   relativeSpawnPoints:
   - {fileID: 1974566252}
@@ -1878,157 +2043,160 @@ MonoBehaviour:
   - position: {x: -0.65519565, y: -0.4339924, z: 0}
     color: {r: 0, g: 0, b: 0, a: 1}
     uv: {x: 0, y: 0}
-  - position: {x: -0.8112, y: -0.9704, z: 0}
+  - position: {x: -0.8078, y: -0.9736, z: 0}
     color: {r: 0, g: 0, b: 0, a: 0}
     uv: {x: 0, y: 0}
-  - position: {x: -0.7322, y: -1.0282, z: 0}
+  - position: {x: -0.7274, y: -1.0294, z: 0}
     color: {r: 0, g: 0, b: 0, a: 0}
     uv: {x: 0, y: 0}
-  - position: {x: -0.6097, y: -1.0802, z: 0}
+  - position: {x: -0.6268, y: -1.0718, z: 0}
     color: {r: 0, g: 0, b: 0, a: 0}
     uv: {x: 0, y: 0}
-  - position: {x: -0.3304, y: -1.1568, z: 0}
+  - position: {x: -0.3536, y: -1.1532, z: 0}
     color: {r: 0, g: 0, b: 0, a: 0}
     uv: {x: 0, y: 0}
-  - position: {x: -0.2224, y: -1.174, z: 0}
+  - position: {x: -0.2575, y: -1.1718, z: 0}
     color: {r: 0, g: 0, b: 0, a: 0}
     uv: {x: 0, y: 0}
-  - position: {x: -0.0448, y: -1.1826, z: 0}
+  - position: {x: -0.2021, y: -1.1739, z: 0}
     color: {r: 0, g: 0, b: 0, a: 0}
     uv: {x: 0, y: 0}
-  - position: {x: 0.0648, y: -1.1758, z: 0}
+  - position: {x: -0.0177, y: -1.1707, z: 0}
     color: {r: 0, g: 0, b: 0, a: 0}
     uv: {x: 0, y: 0}
-  - position: {x: 0.3773, y: -1.1216, z: 0}
+  - position: {x: 0.0417, y: -1.1661, z: 0}
     color: {r: 0, g: 0, b: 0, a: 0}
     uv: {x: 0, y: 0}
-  - position: {x: 0.4717, y: -1.0956, z: 0}
+  - position: {x: 0.3605, y: -1.1223, z: 0}
     color: {r: 0, g: 0, b: 0, a: 0}
     uv: {x: 0, y: 0}
-  - position: {x: 0.5727, y: -1.0427, z: 0}
+  - position: {x: 0.4556, y: -1.0996, z: 0}
     color: {r: 0, g: 0, b: 0, a: 0}
     uv: {x: 0, y: 0}
-  - position: {x: 0.8129, y: -0.8797, z: 0}
+  - position: {x: 0.58, y: -1.036, z: 0}
     color: {r: 0, g: 0, b: 0, a: 0}
     uv: {x: 0, y: 0}
-  - position: {x: 0.8881, y: -0.8171, z: 0}
+  - position: {x: 0.8204, y: -0.867, z: 0}
     color: {r: 0, g: 0, b: 0, a: 0}
     uv: {x: 0, y: 0}
-  - position: {x: 0.9496, y: -0.7411, z: 0}
+  - position: {x: 0.8945, y: -0.8032, z: 0}
     color: {r: 0, g: 0, b: 0, a: 0}
     uv: {x: 0, y: 0}
-  - position: {x: 0.9891, y: -0.669, z: 0}
+  - position: {x: 0.9767, y: -0.6881, z: 0}
     color: {r: 0, g: 0, b: 0, a: 0}
     uv: {x: 0, y: 0}
-  - position: {x: 1.1025, y: -0.4137, z: 0}
+  - position: {x: 1.1061, y: -0.4384, z: 0}
     color: {r: 0, g: 0, b: 0, a: 0}
     uv: {x: 0, y: 0}
-  - position: {x: 1.1322, y: -0.3254, z: 0}
+  - position: {x: 1.1424, y: -0.3475, z: 0}
     color: {r: 0, g: 0, b: 0, a: 0}
     uv: {x: 0, y: 0}
-  - position: {x: 1.1931, y: -0.0669, z: 0}
+  - position: {x: 1.1559, y: -0.2871, z: 0}
     color: {r: 0, g: 0, b: 0, a: 0}
     uv: {x: 0, y: 0}
-  - position: {x: 1.2061, y: 0.0301, z: 0}
+  - position: {x: 1.1978, y: -0.0247, z: 0}
     color: {r: 0, g: 0, b: 0, a: 0}
     uv: {x: 0, y: 0}
-  - position: {x: 1.1989, y: 0.1341, z: 0}
+  - position: {x: 1.2002, y: 0.1167, z: 0}
     color: {r: 0, g: 0, b: 0, a: 0}
     uv: {x: 0, y: 0}
-  - position: {x: 1.1656, y: 0.3242, z: 0}
+  - position: {x: 1.1757, y: 0.311, z: 0}
     color: {r: 0, g: 0, b: 0, a: 0}
     uv: {x: 0, y: 0}
-  - position: {x: 1.12, y: 0.4621, z: 0}
+  - position: {x: 1.154, y: 0.4064, z: 0}
     color: {r: 0, g: 0, b: 0, a: 0}
     uv: {x: 0, y: 0}
-  - position: {x: 1.0486, y: 0.6044, z: 0}
+  - position: {x: 1.1037, y: 0.5133, z: 0}
     color: {r: 0, g: 0, b: 0, a: 0}
     uv: {x: 0, y: 0}
-  - position: {x: 0.9926, y: 0.6919, z: 0}
+  - position: {x: 1.0255, y: 0.6385, z: 0}
     color: {r: 0, g: 0, b: 0, a: 0}
     uv: {x: 0, y: 0}
-  - position: {x: 0.8447, y: 0.8774, z: 0}
+  - position: {x: 1.0127, y: 0.6579, z: 0}
     color: {r: 0, g: 0, b: 0, a: 0}
     uv: {x: 0, y: 0}
-  - position: {x: 0.8035, y: 0.9231, z: 0}
+  - position: {x: 0.8715, y: 0.8622, z: 0}
     color: {r: 0, g: 0, b: 0, a: 0}
     uv: {x: 0, y: 0}
-  - position: {x: 0.7106, y: 1.014, z: 0}
+  - position: {x: 0.7936, y: 0.9505, z: 0}
     color: {r: 0, g: 0, b: 0, a: 0}
     uv: {x: 0, y: 0}
-  - position: {x: 0.6343, y: 1.0752, z: 0}
+  - position: {x: 0.6995, y: 1.0347, z: 0}
     color: {r: 0, g: 0, b: 0, a: 0}
     uv: {x: 0, y: 0}
-  - position: {x: 0.5723, y: 1.1097, z: 0}
+  - position: {x: 0.5887, y: 1.1098, z: 0}
     color: {r: 0, g: 0, b: 0, a: 0}
     uv: {x: 0, y: 0}
-  - position: {x: 0.4334, y: 1.1745, z: 0}
+  - position: {x: 0.4507, y: 1.1784, z: 0}
     color: {r: 0, g: 0, b: 0, a: 0}
     uv: {x: 0, y: 0}
-  - position: {x: 0.3411, y: 1.207, z: 0}
+  - position: {x: 0.3592, y: 1.2132, z: 0}
     color: {r: 0, g: 0, b: 0, a: 0}
     uv: {x: 0, y: 0}
-  - position: {x: 0.221, y: 1.2214, z: 0}
+  - position: {x: 0.2245, y: 1.2307, z: 0}
     color: {r: 0, g: 0, b: 0, a: 0}
     uv: {x: 0, y: 0}
-  - position: {x: -0.0789, y: 1.2208, z: 0}
+  - position: {x: -0.0822, y: 1.2285, z: 0}
     color: {r: 0, g: 0, b: 0, a: 0}
     uv: {x: 0, y: 0}
-  - position: {x: -0.1401, y: 1.2169, z: 0}
+  - position: {x: -0.1592, y: 1.222, z: 0}
     color: {r: 0, g: 0, b: 0, a: 0}
     uv: {x: 0, y: 0}
-  - position: {x: -0.4354, y: 1.1799, z: 0}
+  - position: {x: -0.4434, y: 1.1756, z: 0}
     color: {r: 0, g: 0, b: 0, a: 0}
     uv: {x: 0, y: 0}
-  - position: {x: -0.5308, y: 1.1583, z: 0}
+  - position: {x: -0.5379, y: 1.1504, z: 0}
     color: {r: 0, g: 0, b: 0, a: 0}
     uv: {x: 0, y: 0}
-  - position: {x: -0.6202, y: 1.1185, z: 0}
+  - position: {x: -0.6258, y: 1.1073, z: 0}
     color: {r: 0, g: 0, b: 0, a: 0}
     uv: {x: 0, y: 0}
-  - position: {x: -0.6842, y: 1.0753, z: 0}
+  - position: {x: -0.6844, y: 1.0649, z: 0}
     color: {r: 0, g: 0, b: 0, a: 0}
     uv: {x: 0, y: 0}
-  - position: {x: -0.897, y: 0.9063, z: 0}
+  - position: {x: -0.8938, y: 0.889, z: 0}
     color: {r: 0, g: 0, b: 0, a: 0}
     uv: {x: 0, y: 0}
-  - position: {x: -0.9673, y: 0.8383, z: 0}
+  - position: {x: -0.9622, y: 0.8191, z: 0}
     color: {r: 0, g: 0, b: 0, a: 0}
     uv: {x: 0, y: 0}
-  - position: {x: -1.023, y: 0.7578, z: 0}
+  - position: {x: -1.0157, y: 0.7371, z: 0}
     color: {r: 0, g: 0, b: 0, a: 0}
     uv: {x: 0, y: 0}
-  - position: {x: -1.062, y: 0.6679, z: 0}
+  - position: {x: -1.0458, y: 0.6666, z: 0}
     color: {r: 0, g: 0, b: 0, a: 0}
     uv: {x: 0, y: 0}
-  - position: {x: -1.1654, y: 0.3465, z: 0}
+  - position: {x: -1.1545, y: 0.3456, z: 0}
     color: {r: 0, g: 0, b: 0, a: 0}
     uv: {x: 0, y: 0}
-  - position: {x: -1.1889, y: 0.2165, z: 0}
+  - position: {x: -1.1806, y: 0.2021, z: 0}
     color: {r: 0, g: 0, b: 0, a: 0}
     uv: {x: 0, y: 0}
-  - position: {x: -1.2039, y: -0.1079, z: 0}
+  - position: {x: -1.1915, y: -0.1205, z: 0}
     color: {r: 0, g: 0, b: 0, a: 0}
     uv: {x: 0, y: 0}
-  - position: {x: -1.1982, y: -0.2095, z: 0}
+  - position: {x: -1.1898, y: -0.1824, z: 0}
     color: {r: 0, g: 0, b: 0, a: 0}
     uv: {x: 0, y: 0}
-  - position: {x: -1.1493, y: -0.517, z: 0}
+  - position: {x: -1.1625, y: -0.4842, z: 0}
     color: {r: 0, g: 0, b: 0, a: 0}
     uv: {x: 0, y: 0}
-  - position: {x: -1.1245, y: -0.6117, z: 0}
+  - position: {x: -1.1442, y: -0.5804, z: 0}
     color: {r: 0, g: 0, b: 0, a: 0}
     uv: {x: 0, y: 0}
-  - position: {x: -1.0818, y: -0.6997, z: 0}
+  - position: {x: -1.1075, y: -0.6711, z: 0}
     color: {r: 0, g: 0, b: 0, a: 0}
     uv: {x: 0, y: 0}
-  - position: {x: -0.9892, y: -0.8109, z: 0}
+  - position: {x: -1.0538, y: -0.7529, z: 0}
     color: {r: 0, g: 0, b: 0, a: 0}
     uv: {x: 0, y: 0}
-  m_Triangles: 00001000010000001100100001001000020002000500030002000800050002000f000800020010000f0003000500040005000800060006000800070008000c00090008000f000c0009000b000a0009000c000b000c000e000d000c000f000e00120024002400120024002500120025002600120013002700120026002700130027002800130014002900130028002900140029002a00140015002b0014002a002b0015002b002c0015002c002d00150016002e0015002d002e0016002e002f0016002f00300016003000310016001700320016003100320017003200330017001800340017003300340018003400350018003500360018001900370018003600370019003700380019001a0039001900380039001a0039003a001a001b003b001a003a003b001b003b003c001b001c003d001b003c003d001c003d003e001c003e003f001c001d0040001c003f0040001d00400041001d00410042001d001e0043001d00420043001e00430044001e001f0045001e00440045001f00450046001f00460047001f00470048001f00200049001f0048004900200049004a0020004a004b0020004b004c00200021004d0020004c004d0021004d004e00210022004f0021004e004f0022004f005000220023005100220050005100230051005200230052005300230053005400240012002300240054002300
+  - position: {x: -0.9883, y: -0.8202, z: 0}
+    color: {r: 0, g: 0, b: 0, a: 0}
+    uv: {x: 0, y: 0}
+  m_Triangles: 00001000010000001100100001001000020002000500030002000800050002000f000800020010000f0003000500040005000800060006000800070008000c00090008000f000c0009000b000a0009000c000b000c000e000d000c000f000e00120024002400120024002500120025002600120013002700120026002700130027002800130028002900130014002a00130029002a0014002a002b00140015002c0014002b002c0015002c002d0015002d002e00150016002f0015002e002f0016002f00300016003000310016001700320016003100320017003200330017003300340017001800350017003400350018003500360018001900370018003600370019003700380019003800390019001a003a00190039003a001a003a003b001a001b003c001a003b003c001b003c003d001b001c003e001b003d003e001c003e003f001c001d0040001c003f0040001d00400041001d00410042001d001e0043001d00420043001e00430044001e001f0045001e00440045001f00450046001f00460047001f00470048001f00200049001f0048004900200049004a0020004a004b0020004b004c00200021004d0020004c004d0021004d004e00210022004f0021004e004f0022004f005000220023005100220050005100230051005200230052005300230053005400230054005500240012002300240055002300
   m_LocalBounds:
-    m_Center: {x: 0.0011000037, y: 0.0194, z: 0}
-    m_Extent: {x: 1.2049999, y: 1.202, z: 0}
+    m_Center: {x: 0.0043500066, y: 0.028400004, z: 0}
+    m_Extent: {x: 1.1958499, y: 1.2023001, z: 0}
   m_PointLightInnerAngle: 360
   m_PointLightOuterAngle: 360
   m_PointLightInnerRadius: 0
@@ -2315,7 +2483,7 @@ GameObject:
   - component: {fileID: 1573681981}
   - component: {fileID: 1573681982}
   m_Layer: 6
-  m_Name: WeaponController
+  m_Name: CrossbowController
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

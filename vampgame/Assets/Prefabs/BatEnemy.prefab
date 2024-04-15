@@ -30,8 +30,8 @@ Transform:
   m_GameObject: {fileID: 7601273786654332976}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 6.5538, y: 0.1071, z: 0}
-  m_LocalScale: {x: 0.616313, y: 0.51074505, z: 1}
-  m_ConstrainProportionsScale: 0
+  m_LocalScale: {x: 0.3, y: 0.24861316, z: 0.48676568}
+  m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 8
@@ -100,7 +100,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c164fd2f226d91548b5538602ea29b9a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemyData: {fileID: 11400000, guid: 9baf10dd0afa7064596baf5bb2a9847c, type: 2}
 --- !u!114 &-489735020881349021
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -114,6 +113,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemyData: {fileID: 11400000, guid: 9baf10dd0afa7064596baf5bb2a9847c, type: 2}
+  currentMoveSpeed: 0
+  currentHealth: 0
+  currentDamage: 0
   despawnDistance: 20
 --- !u!61 &-936226749353230505
 BoxCollider2D:
