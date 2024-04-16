@@ -2,15 +2,23 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PlayerStats : MonoBehaviour
 {
+    [SerializeField] private Healthbar _healthbar;
+    [SerializeField] private Healthbar _expbar;
     public CharacterScriptableObject characterData;
     //current stats
+    [HideInInspector]
     public float currentHealth;
+    [HideInInspector]
     public float currentRecovery;
+    [HideInInspector]
     public float currentMoveSpeed;
+    [HideInInspector]
     public float currentMight;
+    [HideInInspector]
     public float currentProjectileSpeed;
 
     //experience and levelling
@@ -18,9 +26,6 @@ public class PlayerStats : MonoBehaviour
     public int experience = 0;
     public int level = 1;
     public int experienceCap;
-    public TextMeshProUGUI exp_text;
-    public TextMeshProUGUI hp_text;
-    public TextMeshProUGUI lvl_text;
 
     //I-frames
     [Header("I-Frames")]
@@ -37,14 +42,19 @@ public class PlayerStats : MonoBehaviour
         public int experienceCapIncrease;
     }
     public List<LevelRange> levelRanges;
+
+    InventoryManager inventory;
+    public int weaponIndex;
     private void Start()
     {
         //initialises the experience cap
         experienceCap = levelRanges[0].experienceCapIncrease;
+        _expbar.UpdateHealthBar(experienceCap, experience);
     }
     public void IncreaseExperience(int amount)
     {
         experience += amount;
+        _expbar.UpdateHealthBar(experienceCap, experience);
         LevelUpChecker();
     }
     void LevelUpChecker()
@@ -64,7 +74,12 @@ public class PlayerStats : MonoBehaviour
                 }
             }
             experienceCap += experienceCapIncrease;
+            GameManager.instance.StartLevelUp();
         }
+        Debug.Log(experience);
+        Debug.Log(experienceCap);
+        _expbar.UpdateHealthBar(experienceCap, experience);
+
     }
 
     public void TakeDamage(float dmg)
@@ -73,6 +88,7 @@ public class PlayerStats : MonoBehaviour
         if (!isInvincible)
         {
             currentHealth -= dmg;
+            _healthbar.UpdateHealthBar(characterData.MaxHealth, currentHealth);
             invincibilityTimer = invincibilityDuration;
             isInvincible = true;
             if (currentHealth <= 0)
@@ -85,12 +101,10 @@ public class PlayerStats : MonoBehaviour
     public void Kill()
     {
         Debug.Log("PLAYER DEAD");
+        SceneManager.LoadScene("Game_Over");
     }
     private void Update()
     {
-        exp_text.text = "EXP: " + experience + "/"+experienceCap;
-        hp_text.text = "Health: " + currentHealth + "/" + characterData.MaxHealth;
-        lvl_text.text = "Level: " + level;
         if (invincibilityTimer > 0)
         {
             invincibilityTimer -= Time.deltaTime;
@@ -104,10 +118,26 @@ public class PlayerStats : MonoBehaviour
     private void Awake()
     {
         //assign the values
+        inventory=GetComponent<InventoryManager>();
         currentHealth = characterData.MaxHealth;
         currentRecovery = characterData.Recovery;
         currentMoveSpeed = characterData.MoveSpeed;
         currentMight = characterData.Might;
         currentProjectileSpeed = characterData.ProjectileSpeed;
+        _healthbar.UpdateHealthBar(characterData.MaxHealth, currentHealth);
+    }
+
+    public void SpawnWeapon(GameObject weapon)
+    {
+        if (weaponIndex >= inventory.weaponSlots.Count)
+        {
+            Debug.LogError("Inventory full");
+            return;
+        }
+        //spawn starting weapon
+        GameObject spawnedWeapon = Instantiate(weapon, transform.position, Quaternion.identity);
+        spawnedWeapon.transform.SetParent(transform);
+        inventory.AddWeapon(weaponIndex, spawnedWeapon.GetComponent<ProjectileManager>());
+        weaponIndex++;
     }
 }

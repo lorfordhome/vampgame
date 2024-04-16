@@ -12,10 +12,11 @@ public class PlayerMovement : MonoBehaviour
     float moveLimiter = 1.4142f; //root two (we love pythagoras)
     public Animator animator;
     public GameObject firePoint;
-    public CharacterScriptableObject characterData;
+    PlayerStats player;
     void Start()
     {
         body = GetComponent<Rigidbody2D>();
+        player=GetComponent<PlayerStats>();
 
     }
 
@@ -27,20 +28,19 @@ public class PlayerMovement : MonoBehaviour
         // animation control. checks if the player is moving or not
         if (horizontal==0 && vertical==0)
         {
-            animator.SetBool("walking", false);
-        }
-        else
-        {
-            animator.SetBool("walking", true);
+            animator.SetBool("walkingleft", false);
+            animator.SetBool("walkingright", false);
         }
         //sets direction of sprite
         if (horizontal == -1)
         {
-            transform.localRotation = Quaternion.Euler(0, 180, 0);
+            animator.SetBool("walkingright", false);
+            animator.SetBool("walkingleft", true);
         }
         if (horizontal == 1)
         {
-            transform.localRotation = Quaternion.Euler(0, 0, 0);
+            animator.SetBool("walkingleft", false);
+            animator.SetBool("walkingright", true);
         }
         firePoint.GetComponent<Rigidbody2D>().position = body.position;
     }
@@ -54,7 +54,7 @@ public class PlayerMovement : MonoBehaviour
             vertical /= moveLimiter;
         }
    
-        body.velocity = new Vector2(horizontal * characterData.MoveSpeed, vertical * characterData.MoveSpeed);
+        body.velocity = new Vector2(horizontal * player.currentMoveSpeed, vertical * player.currentMoveSpeed);
     }
 
 }

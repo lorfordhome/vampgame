@@ -14,6 +14,6 @@ public class FireBehaviour : ProjectileBehaviour
 
     void Update()
     {
-        transform.position += direction * weaponData.Speed * Time.deltaTime; //set the movement of the fire
+        transform.position += direction * currentSpeed * Time.deltaTime; //set the movement of the fire
     }
 }
