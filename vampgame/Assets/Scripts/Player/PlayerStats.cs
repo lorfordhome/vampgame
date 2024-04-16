@@ -54,6 +54,7 @@ public class PlayerStats : MonoBehaviour
     public void IncreaseExperience(int amount)
     {
         experience += amount;
+        _expbar.UpdateHealthBar(experienceCap, experience);
         LevelUpChecker();
     }
     void LevelUpChecker()
@@ -73,10 +74,12 @@ public class PlayerStats : MonoBehaviour
                 }
             }
             experienceCap += experienceCapIncrease;
+            GameManager.instance.StartLevelUp();
         }
         Debug.Log(experience);
         Debug.Log(experienceCap);
         _expbar.UpdateHealthBar(experienceCap, experience);
+
     }
 
     public void TakeDamage(float dmg)
