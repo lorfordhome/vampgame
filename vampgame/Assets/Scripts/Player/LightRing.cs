@@ -8,7 +8,7 @@ public class LightRing : MonoBehaviour
 {
 
     public GameObject Lantern; 
-    public float shrinkRate = 0.1f; //how fast the light shrinks
+    public float shrinkRate = 0.01f; //how fast the light shrinks
     public float growRate = 0.1f; //how fast the light can grow
 
     public Vector3 minSize = new Vector3(0.1f, 0.1f, 0.1f); // min size is small enough that you cant see it
@@ -17,7 +17,7 @@ public class LightRing : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKey(KeyCode.L) )
+        //if (Input.GetKey(KeyCode.L) )
         {
             if (transform.localScale != minSize)
             {
