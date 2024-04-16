@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 4a451923104c4154d9ae4c41d14cb1f2
+guid: 13f044de2111b81448976547f0c1019d
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -110,13 +110,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: weapon_hud_bg_0
+      name: water spray_0
       rect:
         serializedVersion: 2
-        x: 231
-        y: 536
-        width: 518
-        height: 522
+        x: 306
+        y: 71
+        width: 130
+        height: 190
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -124,20 +124,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 8deae016f834d814597ca9fc1d29a55e
-      internalID: 1654374487
+      spriteID: ce02e603a74308b4080bbbc6335d7ab6
+      internalID: 660208069
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: weapon_hud_bg_1
+      name: water spray_2
       rect:
         serializedVersion: 2
-        x: 802
-        y: 36
-        width: 1003
-        height: 1013
+        x: 454
+        y: 62
+        width: 149
+        height: 208
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -145,8 +145,50 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 0527943f33306b04db6a64112aa0a5ac
-      internalID: -1709086192
+      spriteID: 2a83dc51d4127f44ea969d8c59f7a145
+      internalID: 1466062836
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: water spray_5
+      rect:
+        serializedVersion: 2
+        x: 147
+        y: 101
+        width: 133
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b92e699e65242c649a3ae15111316b9d
+      internalID: 906747837
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: water spray_11
+      rect:
+        serializedVersion: 2
+        x: 23
+        y: 97
+        width: 109
+        height: 137
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 87264696f87cb7d41a906ba76be48700
+      internalID: 2105553076
       vertices: []
       indices: 
       edges: []
@@ -162,8 +204,25 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      weapon_hud_bg_0: 1654374487
-      weapon_hud_bg_1: -1709086192
+      water spray_0: 660208069
+      water spray_1: -683985525
+      water spray_10: -1826382807
+      water spray_11: 2105553076
+      water spray_12: -671331134
+      water spray_13: -1561840976
+      water spray_14: 1353389075
+      water spray_15: -2000980209
+      water spray_16: -768219692
+      water spray_17: -1817943589
+      water spray_18: 1539808178
+      water spray_2: 1466062836
+      water spray_3: 2072903152
+      water spray_4: 1715989375
+      water spray_5: 906747837
+      water spray_6: 1494298228
+      water spray_7: 544686569
+      water spray_8: 1455086766
+      water spray_9: -1263434190
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

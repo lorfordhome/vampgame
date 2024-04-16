@@ -42,6 +42,9 @@ public class PlayerStats : MonoBehaviour
         public int experienceCapIncrease;
     }
     public List<LevelRange> levelRanges;
+
+    InventoryManager inventory;
+    public int weaponIndex;
     private void Start()
     {
         //initialises the experience cap
@@ -112,11 +115,26 @@ public class PlayerStats : MonoBehaviour
     private void Awake()
     {
         //assign the values
+        inventory=GetComponent<InventoryManager>();
         currentHealth = characterData.MaxHealth;
         currentRecovery = characterData.Recovery;
         currentMoveSpeed = characterData.MoveSpeed;
         currentMight = characterData.Might;
         currentProjectileSpeed = characterData.ProjectileSpeed;
         _healthbar.UpdateHealthBar(characterData.MaxHealth, currentHealth);
+    }
+
+    public void SpawnWeapon(GameObject weapon)
+    {
+        if (weaponIndex >= inventory.weaponSlots.Count)
+        {
+            Debug.LogError("Inventory full");
+            return;
+        }
+        //spawn starting weapon
+        GameObject spawnedWeapon = Instantiate(weapon, transform.position, Quaternion.identity);
+        spawnedWeapon.transform.SetParent(transform);
+        inventory.AddWeapon(weaponIndex, spawnedWeapon.GetComponent<ProjectileManager>());
+        weaponIndex++;
     }
 }
