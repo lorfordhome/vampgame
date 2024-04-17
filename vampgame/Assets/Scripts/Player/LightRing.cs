@@ -6,51 +6,78 @@ using UnityEngine.UIElements;
 
 public class LightRing : MonoBehaviour
 {
+	public GameObject Fuel;     //Fuel is the "LanternFuel" game object
+    public GameObject Lantern;  //Latern is the "LampLight" game object
 
-    public GameObject Lantern; 
-    public float shrinkRate = 0.1f; //how fast the light shrinks
-    public float growRate = 0.1f; //how fast the light can grow
+
+    public float shrinkRate;	//how fast the light shrinks (set in inspector)
+    public float growRate;		//how fast the light can grow  (set in inspector)
+
 
     public Vector3 minSize = new Vector3(0.1f, 0.1f, 0.1f); // min size is small enough that you cant see it
-    public Vector3 maxSize = new Vector3(2.5f, 2.5f, 2.5f); //set max size as slightly bigger than initial size
+    public Vector3 maxSize = new Vector3(3f, 3f, 3f);		//set max size as slightly bigger than initial size
 
-    // Update is called once per frame
-    void Update()
-    {
-        if (Input.GetKey(KeyCode.L) )
-        {
-            if (transform.localScale != minSize)
-            {
-                Transform transform = Lantern.transform;
-                
-                //shrinks the lanterns scale uniformly
-                transform.localScale -= new Vector3(shrinkRate, shrinkRate, shrinkRate);
+	private bool fuelPickedUp;
 
-                //clamping the minimum size
-                transform.localScale = new Vector3(
-                Mathf.Clamp(transform.localScale.x, minSize.x, maxSize.x),
-                Mathf.Clamp(transform.localScale.y, minSize.y, maxSize.y),
-                Mathf.Clamp(transform.localScale.z, minSize.z, maxSize.z));
-
-			}
-        }
-
-		if (Input.GetKey(KeyCode.K))
+	private void Refuel()
+	{
+		/*Ring of light growing code*/
+		
+		if (transform.localScale != maxSize && fuelPickedUp)
 		{
-			if (transform.localScale != maxSize)
-			{
-				Transform transform = Lantern.transform;
+			Transform transform = Lantern.transform;
 
-				//grows the lanterns scale uniformly
-				transform.localScale += new Vector3(growRate, growRate, growRate);
+			//grows the lanterns scale uniformly
+			transform.localScale += new Vector3(growRate, growRate, growRate);
 
-				//clamping the maximum size
-				transform.localScale = new Vector3(
-				Mathf.Clamp(transform.localScale.x, minSize.x, maxSize.x),
-				Mathf.Clamp(transform.localScale.y, minSize.y, maxSize.y),
-				Mathf.Clamp(transform.localScale.z, minSize.z, maxSize.z));
+			//clamping the maximum size
+			transform.localScale = new Vector3(
+			Mathf.Clamp(transform.localScale.x, minSize.x, maxSize.x),
+			Mathf.Clamp(transform.localScale.y, minSize.y, maxSize.y),
+			Mathf.Clamp(transform.localScale.z, minSize.z, maxSize.z));
 
-			}
+			fuelPickedUp = false;
+		}
+		
+	}
+
+	private void Start()
+	{
+		fuelPickedUp = false;	//boolean set as false on game start
+	}
+	// Update is called once per frame
+	void Update()
+    {
+		/*Ring of light shrinking code*/
+
+		if (transform.localScale != minSize && !fuelPickedUp)
+		{
+			Transform transform = Lantern.transform;
+
+			//shrinks the lanterns scale uniformly
+			transform.localScale -= new Vector3(shrinkRate, shrinkRate, shrinkRate);
+
+			//clamping the minimum size
+			transform.localScale = new Vector3(
+			Mathf.Clamp(transform.localScale.x, minSize.x, maxSize.x),
+			Mathf.Clamp(transform.localScale.y, minSize.y, maxSize.y),
+			Mathf.Clamp(transform.localScale.z, minSize.z, maxSize.z));
+
+
+
+		}  
+	}
+
+	private void OnTriggerEnter2D(Collider2D other)
+	{
+		
+		if (other.tag == "Fuel")		// Check if the Player/LightRing's collider has entered the Fuel's
+		{
+			Debug.Log("pickup fuel");
+			fuelPickedUp = true;
+			Invoke("Refuel", 2f);		//calls the Refuel function for 2 seconds		
+			Destroy(Fuel);
+
 		}
 	}
 }
