@@ -14,6 +14,8 @@ GameObject:
   - component: {fileID: -489735020881349021}
   - component: {fileID: -936226749353230505}
   - component: {fileID: 8366271980343696660}
+  - component: {fileID: 6716248842349955927}
+  - component: {fileID: 3459755793671620999}
   m_Layer: 0
   m_Name: BatEnemy
   m_TagString: Enemy
@@ -34,7 +36,7 @@ Transform:
   m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 8
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &7835616968349668095
 SpriteRenderer:
@@ -56,7 +58,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -77,7 +79,7 @@ SpriteRenderer:
   m_SortingLayerID: -953278239
   m_SortingLayer: 3
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: d0db4ced8402d3844a90dd3709be00b1, type: 3}
+  m_Sprite: {fileID: -989368052, guid: ded75b2ab5d70504697bedeea64bcacb, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -117,6 +119,9 @@ MonoBehaviour:
   currentHealth: 0
   currentDamage: 0
   despawnDistance: 20
+  damageColor: {r: 0.21960784, g: 0.21960784, b: 0.21960784, a: 1}
+  damageFlashDuration: 0.2
+  deathFadeTime: 0.6
 --- !u!61 &-936226749353230505
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -149,18 +154,18 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: 0.025000095, y: 1.45}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 2.17, y: 4.59}
+    pivot: {x: 0.4944321, y: 0.097222224}
+    oldSize: {x: 4.49, y: 3.6}
     newSize: {x: 2.17, y: 4.59}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 2.17, y: 4.59}
+  m_Size: {x: 4.49, y: 3.6}
   m_EdgeRadius: 0
 --- !u!114 &8366271980343696660
 MonoBehaviour:
@@ -178,3 +183,51 @@ MonoBehaviour:
   - name: Blue experience gem
     itemPrefab: {fileID: 3818719907670606838, guid: a0b111b4e492cdc44b2a415d00c0169e, type: 3}
     dropRate: 100
+--- !u!95 &6716248842349955927
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7601273786654332976}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 6efdcf1d6df1bad4eb82df1bc139c300, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
+--- !u!50 &3459755793671620999
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7601273786654332976}
+  m_BodyType: 1
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0

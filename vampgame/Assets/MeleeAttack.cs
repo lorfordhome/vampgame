@@ -9,10 +9,25 @@ public class MeleeAttack : MonoBehaviour
     [SerializeField] private float damage;
     public SwordController controller;
     float timeUntilMelee;
+    public AudioSource adSource;
+    public AudioClip[] adClips;
+    private int adCount = 0;
 
     private void Start()
     {
         controller=FindObjectOfType<SwordController>();
+        adSource=GetComponent<AudioSource>();
+    }
+
+    private void PlayAudio()
+    {
+        adSource.clip = adClips[adCount];
+        adSource.Play();
+        adCount++;
+        if (adCount > 2)
+        {
+            adCount = 0;
+        }
     }
     private void Update()
     {
@@ -22,6 +37,7 @@ public class MeleeAttack : MonoBehaviour
             {
                 controller.canRotate = false;
                 anim.SetTrigger("Attack");
+                PlayAudio();
                 timeUntilMelee = meleeSpeed;
             }
         }

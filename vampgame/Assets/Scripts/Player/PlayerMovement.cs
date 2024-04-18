@@ -13,6 +13,7 @@ public class PlayerMovement : MonoBehaviour
     public Animator animator;
     public GameObject firePoint;
     PlayerStats player;
+    public AudioSource walkingSound;
     void Start()
     {
         body = GetComponent<Rigidbody2D>();
@@ -22,6 +23,7 @@ public class PlayerMovement : MonoBehaviour
 
     void Update()
     {
+        walkingSound.mute = false;
         // Gives a value between -1 and 1
         horizontal = Input.GetAxisRaw("Horizontal"); // -1 is left
         vertical = Input.GetAxisRaw("Vertical"); // -1 is down
@@ -30,6 +32,7 @@ public class PlayerMovement : MonoBehaviour
         {
             animator.SetBool("walkingleft", false);
             animator.SetBool("walkingright", false);
+            walkingSound.mute = true;
         }
         //sets direction of sprite
         if (horizontal == -1)
@@ -42,7 +45,8 @@ public class PlayerMovement : MonoBehaviour
             animator.SetBool("walkingleft", false);
             animator.SetBool("walkingright", true);
         }
-        firePoint.GetComponent<Rigidbody2D>().position = body.position;
+        GetComponent<Rigidbody2D>().position = body.position;
+        firePoint.transform.position = body.position;
     }
 
     void FixedUpdate()
