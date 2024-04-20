@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class NewBehaviourScript : MonoBehaviour, I_collectible
+public class ExpGem : MonoBehaviour, I_collectible
 {
     public int experienceGranted;
     public void Collect()

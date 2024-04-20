@@ -34,7 +34,7 @@ public class ProjectileBehaviour : MonoBehaviour
         if (col.CompareTag("Enemy"))
         {
             EnemyStats enemy = col.GetComponent<EnemyStats>();
-            enemy.TakeDamage(currentDamage);
+            enemy.TakeDamage(currentDamage,transform.position);
             ReducePierce();
 
         }

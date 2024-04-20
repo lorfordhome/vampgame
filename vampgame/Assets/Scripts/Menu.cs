@@ -4,16 +4,18 @@ using UnityEngine.SceneManagement;
 
 public class Menu : MonoBehaviour
 {
-	/*	START OF MAIN MENU BUTTONS SCRIPT	*/
+    /*	START OF MAIN MENU BUTTONS SCRIPT	*/
 
 
 
 
-	/*	FUNCTIONS	*/
+    /*	FUNCTIONS	*/
 
 
-	//using scene index instead of name, can be changed if using numbers becomes confusing
-	public void StartButton()
+    //using scene index instead of name, can be changed if using numbers becomes confusing
+
+    public GameObject controlsScreen;
+    public void StartButton()
 	{
 		SceneManager.LoadScene(1); 
 		Debug.Log ("Start Game");
@@ -21,20 +23,27 @@ public class Menu : MonoBehaviour
 
 	public void OptionsButton()
 	{
-		SceneManager.LoadScene(2);
+		SceneManager.LoadScene("Options_Menu");
 		Debug.Log("Options");
 	}
 
 	public void HomeButton()
 	{
-		SceneManager.LoadScene(0);
+		SceneManager.LoadScene("Main_Menu");
 		Debug.Log("Home");
 	}
 
 	public void ControlsButton()
 	{
-		SceneManager.LoadScene(3);
-	}
+		if (controlsScreen.active == true)
+		{
+			controlsScreen.SetActive(false);
+		}
+		else
+		{
+			controlsScreen.SetActive(true);
+		}
+    }
 
 	public void QuitButton()
 	{

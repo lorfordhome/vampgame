@@ -52,7 +52,7 @@ public class MeleeAttack : MonoBehaviour
         if (collision.CompareTag("Enemy"))
         {
             EnemyStats enemy = collision.GetComponent<EnemyStats>();
-            enemy.TakeDamage(damage);
+            enemy.TakeDamage(damage, transform.position);
         }
     }
     void AnimDone()

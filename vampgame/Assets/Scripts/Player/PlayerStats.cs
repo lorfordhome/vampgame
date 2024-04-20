@@ -33,6 +33,12 @@ public class PlayerStats : MonoBehaviour
     float invincibilityTimer;
     bool isInvincible;
 
+    [Header("Damage Feedback")]
+    public Color damageColour = new Color(1, 0, 0, 1);
+    public float damageFlashDuration = 0.2f;
+    private SpriteRenderer spriteRenderer;
+    Color originalcolour;
+
     //class for managaging levels. essentially - the higher player lvl, the more exp is needed to lvl up. also used for tracking xp overflow (allowing player to ie. gain multiple levels at once)
     [System.Serializable]//means its fields are visible and editable in the inspector
     public class LevelRange
@@ -50,6 +56,8 @@ public class PlayerStats : MonoBehaviour
         //initialises the experience cap
         experienceCap = levelRanges[0].experienceCapIncrease;
         _expbar.UpdateHealthBar(experienceCap, experience);
+        spriteRenderer = GetComponent<SpriteRenderer>();
+        originalcolour = spriteRenderer.color;
     }
     public void IncreaseExperience(int amount)
     {
@@ -84,6 +92,7 @@ public class PlayerStats : MonoBehaviour
 
     public void TakeDamage(float dmg)
     {
+        StartCoroutine(DamageFlash());
  
         if (!isInvincible)
         {
@@ -139,5 +148,11 @@ public class PlayerStats : MonoBehaviour
         spawnedWeapon.transform.SetParent(transform);
         inventory.AddWeapon(weaponIndex, spawnedWeapon.GetComponent<ProjectileManager>());
         weaponIndex++;
+    }
+    IEnumerator DamageFlash()
+    {
+        spriteRenderer.color = damageColour;
+        yield return new WaitForSeconds(damageFlashDuration);
+        spriteRenderer.color = originalcolour;
     }
 }

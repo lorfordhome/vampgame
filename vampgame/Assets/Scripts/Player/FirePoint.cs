@@ -9,6 +9,7 @@ public class FirePoint : MonoBehaviour
     public Rigidbody2D body;
     public Vector3 projdirection;
     public float angle;
+
     void Update()
     {
         mousePos = cam.ScreenToWorldPoint(Input.mousePosition);//gets mouse position

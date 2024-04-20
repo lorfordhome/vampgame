@@ -23,6 +23,7 @@ public class GameManager : MonoBehaviour
     public GameObject levelUpScreen;
 
     public bool choosingUpgrade = false;
+    AudioSource levelUpSound;
 
     private void Awake()
     {
@@ -34,8 +35,9 @@ public class GameManager : MonoBehaviour
         {
             Debug.LogWarning("gamemanager singleton error");
         }
-
+        levelUpSound= GetComponent<AudioSource>();
         DisableScreens();
+        Cursor.visible = false;
     }
     private void Update()
     {
@@ -70,6 +72,7 @@ public class GameManager : MonoBehaviour
     {
         if (currentState != GameState.Paused)
         {
+            Cursor.visible = true;
             previousState = currentState;
             ChangeState(GameState.Paused);
             Time.timeScale = 0f;
@@ -81,6 +84,7 @@ public class GameManager : MonoBehaviour
     {
         if (currentState == GameState.Paused)
         {
+            Cursor.visible = false;
             ChangeState(previousState);
             Time.timeScale = 1f;
             pauseScreen.SetActive(false);
@@ -104,10 +108,13 @@ public class GameManager : MonoBehaviour
 
     public void StartLevelUp()
     {
+        Cursor.visible = true;
+        levelUpSound.Play();
         ChangeState(GameState.LevelUp);
     }
     public void EndLevelUp()
     {
+        Cursor.visible = false;
         choosingUpgrade = false;
         Time.timeScale = 1f;
         levelUpScreen.SetActive(false);

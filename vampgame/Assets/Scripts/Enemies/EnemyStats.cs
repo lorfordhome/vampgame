@@ -12,6 +12,8 @@ public class EnemyStats : MonoBehaviour
     [HideInInspector]
     public float currentDamage;
 
+    public GameObject particleExplosion;
+
     public float despawnDistance = 20f;
     Transform player;
 
@@ -44,10 +46,15 @@ public class EnemyStats : MonoBehaviour
         currentHealth = enemyData.MaxHealth;
         currentDamage = enemyData.Damage;
     }
-    public void TakeDamage(float dmg)
+    public void TakeDamage(float dmg,Vector2 sourcePosition,float knockbackForce=10f,float knockbackDuration=0.2f)
     {
         currentHealth -= dmg;
         StartCoroutine(DamageFlash());
+        if (knockbackForce > 0)
+        {
+            Vector2 dir=(Vector2)transform.position-sourcePosition;
+            movement.Knockback(dir.normalized*knockbackForce, knockbackDuration);
+        }
         if (currentHealth <= 0)
         {
             Kill();
@@ -63,13 +70,18 @@ public class EnemyStats : MonoBehaviour
         if (col.gameObject.CompareTag("Player"))
         {
             PlayerStats player = col.gameObject.GetComponent<PlayerStats>();
-            Debug.Log("enemy hit player");
             player.TakeDamage(currentDamage);
+            this.TakeDamage(0f, this.transform.position,5f,0.1f);
         }
     }
 
     private void OnDestroy()
     {
+        if (!gameObject.scene.isLoaded)//stops that annoying error message
+        {
+            return;
+        }
+        Instantiate(particleExplosion, transform.position, Quaternion.identity);
         EnemySpawner es=FindObjectOfType<EnemySpawner>();
         es.OnEnemyKilled();
     }

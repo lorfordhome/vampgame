@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4cbacf2352f4ad848b80a88ef96bd03f, type: 3}
   m_Name: Bruiser
   m_EditorClassIdentifier: 
-  moveSpeed: 2
-  maxHealth: 3
+  moveSpeed: 1
+  maxHealth: 5
   damage: 10

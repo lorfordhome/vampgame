@@ -12,11 +12,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: afa790d9c7af79a48b52f3c9d32f8288, type: 3}
   m_Name: Shotgun 2lvl
   m_EditorClassIdentifier: 
-  prefab: {fileID: 7816406602440680091, guid: a6e838ef29e62d445a0f76d0f6ebdfd4, type: 3}
+  prefab: {fileID: 7816406602440680091, guid: 3b0951c710f541248b234e769b8ddad4, type: 3}
   damage: 3
   speed: 8
   cooldownDuration: 3
   pierce: 99
   level: 2
-  nextLevelPrefab: {fileID: 0}
+  nextLevelPrefab: {fileID: 7816406602440680091, guid: 3b0951c710f541248b234e769b8ddad4, type: 3}
   icon: {fileID: 660208069, guid: 13f044de2111b81448976547f0c1019d, type: 3}
