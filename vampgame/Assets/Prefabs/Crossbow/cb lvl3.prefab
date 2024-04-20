@@ -46,6 +46,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   weaponData: {fileID: 11400000, guid: ca39b144ef9ca2d42bda96f0b5b86bce, type: 2}
+  spawnOffset: 0.5
 --- !u!82 &1722653508443244094
 AudioSource:
   m_ObjectHideFlags: 0
@@ -58,7 +59,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: c2da9a10463de5844ac09576183d8f1c, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 0.397
+  m_Volume: 0.8
   m_Pitch: 1
   Loop: 0
   Mute: 0

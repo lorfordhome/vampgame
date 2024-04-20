@@ -8,6 +8,7 @@ TagManager:
   - Collidable
   - boundary
   - Enemy
+  - sword
   layers:
   - Default
   - TransparentFX
@@ -44,6 +45,9 @@ TagManager:
   m_SortingLayers:
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: floor
+    uniqueID: 3437957079
     locked: 0
   - name: Background
     uniqueID: 1216995979

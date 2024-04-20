@@ -20,6 +20,10 @@ public class ProjectileBehaviour : MonoBehaviour
         currentCooldownDuration=weaponData.CooldownDuration;
         currentPierce = weaponData.Pierce;
     }
+    public float GetCurrentDamage()
+    {
+        return currentDamage * FindObjectOfType<PlayerStats>().currentMight;
+    }
     protected virtual void Start()
     {
         Destroy(gameObject, destroyAfterSeconds);
@@ -34,7 +38,7 @@ public class ProjectileBehaviour : MonoBehaviour
         if (col.CompareTag("Enemy"))
         {
             EnemyStats enemy = col.GetComponent<EnemyStats>();
-            enemy.TakeDamage(currentDamage,transform.position);
+            enemy.TakeDamage(GetCurrentDamage(), transform.position);
             ReducePierce();
 
         }

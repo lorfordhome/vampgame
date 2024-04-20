@@ -21,9 +21,11 @@ public class GameManager : MonoBehaviour
     [Header("UI")]
     public GameObject pauseScreen;
     public GameObject levelUpScreen;
+    public GameObject gameHUD;
 
     public bool choosingUpgrade = false;
     AudioSource levelUpSound;
+    public GameObject player;
 
     private void Awake()
     {
@@ -56,6 +58,7 @@ public class GameManager : MonoBehaviour
                 {
                     choosingUpgrade = true;
                     Time.timeScale = 0f;
+                    gameHUD.SetActive(false);
                     levelUpScreen.SetActive(true);
                 }
                 break;
@@ -77,6 +80,7 @@ public class GameManager : MonoBehaviour
             ChangeState(GameState.Paused);
             Time.timeScale = 0f;
             pauseScreen.SetActive(true);
+            gameHUD.SetActive(false);
             Debug.Log("game paused");
         }
     }
@@ -88,6 +92,7 @@ public class GameManager : MonoBehaviour
             ChangeState(previousState);
             Time.timeScale = 1f;
             pauseScreen.SetActive(false);
+            gameHUD.SetActive(true);
             Debug.Log("game resumed");
         }
     }
@@ -111,6 +116,7 @@ public class GameManager : MonoBehaviour
         Cursor.visible = true;
         levelUpSound.Play();
         ChangeState(GameState.LevelUp);
+        player.SendMessage("RemoveAndApplyUpgrades");
     }
     public void EndLevelUp()
     {
@@ -118,6 +124,7 @@ public class GameManager : MonoBehaviour
         choosingUpgrade = false;
         Time.timeScale = 1f;
         levelUpScreen.SetActive(false);
+        gameHUD.SetActive(true) ;
         ChangeState(GameState.Gameplay);
     }
 
@@ -125,6 +132,17 @@ public class GameManager : MonoBehaviour
     {
         pauseScreen.SetActive(false);
         levelUpScreen.SetActive(false);
+    }
+    private void GamePlaySwitch()
+    {
+        if (gameHUD.activeInHierarchy == false)
+        {
+            gameHUD.SetActive(true);
+        }
+        else
+        {
+            gameHUD.SetActive(false);
+        }
     }
 
     public void ChangeScene(string sceneToLoad)

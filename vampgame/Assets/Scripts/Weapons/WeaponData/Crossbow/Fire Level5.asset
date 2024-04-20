@@ -1,0 +1,24 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: afa790d9c7af79a48b52f3c9d32f8288, type: 3}
+  m_Name: Fire Level5
+  m_EditorClassIdentifier: 
+  prefab: {fileID: 8831150149325047858, guid: 56b292e7d31dcbc4790e0f9840364aab, type: 3}
+  damage: 2
+  speed: 10
+  cooldownDuration: 0.4
+  pierce: 2
+  level: 5
+  nextLevelPrefab: {fileID: 7313195699302866904, guid: 3b4106f7a8b39e64290bb4ea533a3b91, type: 3}
+  name: 'Crossbow                                  Level: 5'
+  description: increase speed and fire rate
+  icon: {fileID: 21300000, guid: a01dc62dc6e332345901974fe714ee7d, type: 3}

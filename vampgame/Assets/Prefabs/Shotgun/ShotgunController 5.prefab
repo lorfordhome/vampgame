@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 8302217588897373537}
   - component: {fileID: 425567653254889640}
   m_Layer: 6
-  m_Name: SG lvl2
+  m_Name: ShotgunController 5
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -45,7 +45,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a288fea1db233d44caaaafbe09bc9fb4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  weaponData: {fileID: 11400000, guid: e48638794aef71c498d5e8a27ab040a0, type: 2}
+  weaponData: {fileID: 11400000, guid: 7d1a3f6f67cb2f9408048c04549dd63c, type: 2}
+  spawnOffset: 0.5
 --- !u!82 &425567653254889640
 AudioSource:
   m_ObjectHideFlags: 0

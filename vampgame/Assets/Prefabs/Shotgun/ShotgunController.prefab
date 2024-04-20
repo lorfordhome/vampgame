@@ -46,6 +46,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   weaponData: {fileID: 11400000, guid: 9919403b93723c74e81de5c6db715073, type: 2}
+  spawnOffset: 0.5
 --- !u!82 &425567653254889640
 AudioSource:
   m_ObjectHideFlags: 0

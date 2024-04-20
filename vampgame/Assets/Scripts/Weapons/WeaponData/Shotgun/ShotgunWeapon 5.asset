@@ -10,13 +10,15 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: afa790d9c7af79a48b52f3c9d32f8288, type: 3}
-  m_Name: Shotgun 2lvl
+  m_Name: ShotgunWeapon 5
   m_EditorClassIdentifier: 
-  prefab: {fileID: 7816406602440680091, guid: 3b0951c710f541248b234e769b8ddad4, type: 3}
-  damage: 3
-  speed: 8
-  cooldownDuration: 3
+  prefab: {fileID: 5989301914889811923, guid: b0245cc23a24dd14cb90675224acbbb6, type: 3}
+  damage: 4.5
+  speed: 11
+  cooldownDuration: 1.5
   pierce: 99
-  level: 2
-  nextLevelPrefab: {fileID: 7816406602440680091, guid: 3b0951c710f541248b234e769b8ddad4, type: 3}
-  icon: {fileID: 660208069, guid: 13f044de2111b81448976547f0c1019d, type: 3}
+  level: 6
+  nextLevelPrefab: {fileID: 0}
+  name: Holier Water
+  description: give them a baptism they'll never forget
+  icon: {fileID: 21300000, guid: df161287b24ea694091b97045c8dea56, type: 3}

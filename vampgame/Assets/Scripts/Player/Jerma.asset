@@ -16,5 +16,5 @@ MonoBehaviour:
   maxHealth: 100
   recovery: 0
   moveSpeed: 6
-  might: 0
+  might: 1
   projectileSpeed: 0

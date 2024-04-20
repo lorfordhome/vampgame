@@ -51,6 +51,7 @@ public class PlayerStats : MonoBehaviour
 
     InventoryManager inventory;
     public int weaponIndex;
+    public int passiveIndex;
     private void Start()
     {
         //initialises the experience cap
@@ -148,6 +149,20 @@ public class PlayerStats : MonoBehaviour
         spawnedWeapon.transform.SetParent(transform);
         inventory.AddWeapon(weaponIndex, spawnedWeapon.GetComponent<ProjectileManager>());
         weaponIndex++;
+    }
+    public void SpawnPassive(GameObject passive)
+    {
+
+        if (passiveIndex >= inventory.passiveSlots.Count)
+        {
+            Debug.LogError("Inventory full");
+            return;
+        }
+        //spawn starting weapon
+        GameObject spawnedPassive = Instantiate(passive, transform.position, Quaternion.identity);
+        spawnedPassive.transform.SetParent(transform);
+        inventory.AddPassive(weaponIndex, spawnedPassive.GetComponent<PassiveItem>());
+        passiveIndex++;
     }
     IEnumerator DamageFlash()
     {

@@ -14,9 +14,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   prefab: {fileID: 7816406602440680091, guid: a6e838ef29e62d445a0f76d0f6ebdfd4, type: 3}
   damage: 1
-  speed: 8
+  speed: 6
   cooldownDuration: 3
   pierce: 99
   level: 1
   nextLevelPrefab: {fileID: 2353372900197439488, guid: 313b5a513a4e74f459575fd0c3275bfd, type: 3}
-  icon: {fileID: 660208069, guid: 13f044de2111b81448976547f0c1019d, type: 3}
+  name: Holy Water
+  description: a vampire's nightmare, now in a handy spray bottle
+  icon: {fileID: 21300000, guid: df161287b24ea694091b97045c8dea56, type: 3}
