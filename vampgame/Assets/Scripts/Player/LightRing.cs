@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
@@ -11,46 +12,40 @@ public class LightRing : MonoBehaviour
 
 
     public float shrinkRate;	//how fast the light shrinks (set in inspector)
-    public float growRate;		//how fast the light can grow  (set in inspector)
+    public float growRate;      //how fast the light can grow  (set in inspector)
+	public float refuelTime = 2f;	//how long the lantern will stay at full size after refuelling
 
 
     public Vector3 minSize = new Vector3(0.1f, 0.1f, 0.1f); // min size is small enough that you cant see it
     public Vector3 maxSize = new Vector3(3f, 3f, 3f);		//set max size as slightly bigger than initial size
 
-	private bool fuelPickedUp;
-	private bool Growing;
+	private bool Growing = false;
 
-
-
-	private void Start()
-	{
-		fuelPickedUp = false;   //boolean set as false on game start
-		Growing = false;	
-	}
 
 	//Refuel stores the logic for the light ring growing
-	private void Refuel()
+	private IEnumerator Refuel()	//set as coroutine (IEnumerator) to be able to set a pause before setting Growing as false
 	{
-		/*Ring of light growing code*/
 		
-		if (transform.localScale != maxSize && fuelPickedUp)
-		{	
-			Growing = true;
-			while (Growing)
-			{
-				Transform transform = Lantern.transform;
+		
+		if (transform.localScale != maxSize)	//cant pickup another fuel item whilst at full size
+		{		
+			/*Ring of light growing code*/
+			Transform transform = Lantern.transform;
 
-				//grows the lanterns scale uniformly
-				transform.localScale += new Vector3(growRate, growRate, growRate);
+			//grows the lanterns scale uniformly
+			transform.localScale = maxSize;	//sets the light ring to max size
 
-				//clamping the maximum size
-				transform.localScale = new Vector3(
-				Mathf.Clamp(transform.localScale.x, minSize.x, maxSize.x),
-				Mathf.Clamp(transform.localScale.y, minSize.y, maxSize.y),
-				Mathf.Clamp(transform.localScale.z, minSize.z, maxSize.z));
+			//clamping the maximum size
+			transform.localScale = new Vector3(
+			Mathf.Clamp(transform.localScale.x, minSize.x, maxSize.x),
+			Mathf.Clamp(transform.localScale.y, minSize.y, maxSize.y),
+			Mathf.Clamp(transform.localScale.z, minSize.z, maxSize.z));
 
-				fuelPickedUp = false;
-			}
+			//fuelPickedUp = false;
+			yield return new WaitForSeconds(refuelTime);
+			Debug.Log("2 Seconds");
+			Growing = false;
+								
 		}
 		
 	}
@@ -59,26 +54,31 @@ public class LightRing : MonoBehaviour
 	// Update is called once per frame
 	void Update()
     {
-		/*Ring of light shrinking code*/
-		while (!Growing)
+		
+		if (Growing)
 		{
-			if (transform.localScale != minSize && !fuelPickedUp)
-			{
-				Transform transform = Lantern.transform;
+			StartCoroutine(Refuel());
+			
+		}
+		if (transform.localScale != minSize && !Growing) 
+		{
+	
+			/*Ring of light shrinking code*/
+			Transform transform = Lantern.transform;
 
-				//shrinks the lanterns scale uniformly
-				transform.localScale -= new Vector3(shrinkRate, shrinkRate, shrinkRate);
+			//shrinks the lanterns scale uniformly
+			transform.localScale -= new Vector3(shrinkRate, shrinkRate, shrinkRate);
 
-				//clamping the minimum size
-				transform.localScale = new Vector3(
-				Mathf.Clamp(transform.localScale.x, minSize.x, maxSize.x),
-				Mathf.Clamp(transform.localScale.y, minSize.y, maxSize.y),
-				Mathf.Clamp(transform.localScale.z, minSize.z, maxSize.z));
-			}
-
-
-		}  
+			//clamping the minimum size
+			transform.localScale = new Vector3(
+			Mathf.Clamp(transform.localScale.x, minSize.x, maxSize.x),
+			Mathf.Clamp(transform.localScale.y, minSize.y, maxSize.y),
+			Mathf.Clamp(transform.localScale.z, minSize.z, maxSize.z));
+			
+		}
 	}
+
+		
 
 	private void OnTriggerEnter2D(Collider2D other)
 	{
@@ -86,11 +86,10 @@ public class LightRing : MonoBehaviour
 		
 		if (other.tag == "Fuel")		// Check if the Player/LightRing's collider has entered the Fuel's
 		{
-			Debug.Log("pickup fuel");
-			fuelPickedUp = true;
-			Invoke("Refuel", 2f);		//calls the Refuel function for 2 seconds		
-			Destroy(Fuel);
-			Growing	= false;
+			Growing = true;
+			Debug.Log("pickup fuel");	
+			Destroy(Fuel);				//gets rid of pickup
+			
 		}
 	}
 }
