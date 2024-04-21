@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 9206462652754649928}
   - component: {fileID: 9144694140328112436}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: ShotgunLight
   m_TagString: Untagged
   m_Icon: {fileID: 0}

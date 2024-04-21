@@ -2,14 +2,13 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Lantern : MonoBehaviour, I_collectible
+public class Lantern : Pickups
 {
-    public float lightGiven;
-    public void Collect()
+    public float lightGiven=10f;
+    public void OnDestroy()
     {
         LightRing light = FindObjectOfType<LightRing>();
         light.GrowLight(lightGiven);
-        Destroy(gameObject);
         Debug.Log("light Collected");
     }
 }

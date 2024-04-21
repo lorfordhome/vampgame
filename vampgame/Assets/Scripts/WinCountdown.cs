@@ -30,7 +30,8 @@ public class WinCountdown : MonoBehaviour
 
 		if (winTime <= 0.1f)	//set 0.1 as if set to 0, timer goes into negatives
 		{
-			SceneManager.LoadScene(sceneToLoad);	//sets scene to load, sets in scene manager
+			Cursor.visible = true;
+			SceneController.instance.ChangeScene(sceneToLoad);	//sets scene to load, sets in scene manager
 		}
 	}
 

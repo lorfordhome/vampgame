@@ -12,7 +12,8 @@ GameObject:
   - component: {fileID: 8077895197976195507}
   - component: {fileID: 1725598935818016407}
   - component: {fileID: -8155347097050911714}
-  m_Layer: 0
+  - component: {fileID: -3157568106325602055}
+  m_Layer: 10
   m_Name: Blue Gem
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -74,8 +75,8 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -394487373
-  m_SortingLayer: 2
-  m_SortingOrder: 0
+  m_SortingLayer: 3
+  m_SortingOrder: -1
   m_Sprite: {fileID: 21300000, guid: a4f43db01c4c81f4bb4e6d0f77c9b2b5, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -144,7 +145,38 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2cd6b7c5035481c42a359010befaefc1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  experienceGranted: 50
+  lifespan: 0.5
+  bobbingAnimation:
+    frequency: 2
+    direction: {x: 0, y: 0.3}
+  experienceGranted: 25
+--- !u!50 &-3157568106325602055
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3818719907670606838}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 0
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
 --- !u!1 &6856098216559107188
 GameObject:
   m_ObjectHideFlags: 0
@@ -155,7 +187,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8816743436306173353}
   - component: {fileID: 4978069620901417307}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: LampLight
   m_TagString: Untagged
   m_Icon: {fileID: 0}

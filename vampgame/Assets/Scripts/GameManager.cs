@@ -5,7 +5,6 @@ using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
-
     public static GameManager instance;
     public enum GameState
     {
@@ -26,6 +25,7 @@ public class GameManager : MonoBehaviour
     public bool choosingUpgrade = false;
     AudioSource levelUpSound;
     public GameObject player;
+    public float UIDelay = 0.5f;
 
     private void Awake()
     {
@@ -114,6 +114,7 @@ public class GameManager : MonoBehaviour
     public void StartLevelUp()
     {
         Cursor.visible = true;
+        StartCoroutine(misclickPrevention());
         levelUpSound.Play();
         ChangeState(GameState.LevelUp);
         player.SendMessage("RemoveAndApplyUpgrades");
@@ -133,20 +134,12 @@ public class GameManager : MonoBehaviour
         pauseScreen.SetActive(false);
         levelUpScreen.SetActive(false);
     }
-    private void GamePlaySwitch()
-    {
-        if (gameHUD.activeInHierarchy == false)
-        {
-            gameHUD.SetActive(true);
-        }
-        else
-        {
-            gameHUD.SetActive(false);
-        }
-    }
 
-    public void ChangeScene(string sceneToLoad)
+    IEnumerator misclickPrevention()
     {
-        SceneManager.LoadScene(sceneToLoad);
+        Cursor.lockState = CursorLockMode.Locked;
+        yield return new WaitForSecondsRealtime(UIDelay);
+        Cursor.lockState = CursorLockMode.None;
     }
+    
 }

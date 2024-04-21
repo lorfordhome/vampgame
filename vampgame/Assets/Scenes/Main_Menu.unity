@@ -604,6 +604,78 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 309087271}
   m_CullTransparentMesh: 1
+--- !u!1001 &455421189
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 708373609689033910, guid: a8f1948c879cc824a984c4213ccb8647, type: 3}
+      propertyPath: m_Name
+      value: SceneManager
+      objectReference: {fileID: 0}
+    - target: {fileID: 4893813095731367906, guid: a8f1948c879cc824a984c4213ccb8647, type: 3}
+      propertyPath: m_RootOrder
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4893813095731367906, guid: a8f1948c879cc824a984c4213ccb8647, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 1041.4617
+      objectReference: {fileID: 0}
+    - target: {fileID: 4893813095731367906, guid: a8f1948c879cc824a984c4213ccb8647, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 661.60516
+      objectReference: {fileID: 0}
+    - target: {fileID: 4893813095731367906, guid: a8f1948c879cc824a984c4213ccb8647, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -0.7976609
+      objectReference: {fileID: 0}
+    - target: {fileID: 4893813095731367906, guid: a8f1948c879cc824a984c4213ccb8647, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4893813095731367906, guid: a8f1948c879cc824a984c4213ccb8647, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4893813095731367906, guid: a8f1948c879cc824a984c4213ccb8647, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4893813095731367906, guid: a8f1948c879cc824a984c4213ccb8647, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4893813095731367906, guid: a8f1948c879cc824a984c4213ccb8647, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4893813095731367906, guid: a8f1948c879cc824a984c4213ccb8647, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4893813095731367906, guid: a8f1948c879cc824a984c4213ccb8647, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: a8f1948c879cc824a984c4213ccb8647, type: 3}
+--- !u!114 &455421190 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5046294792219706639, guid: a8f1948c879cc824a984c4213ccb8647, type: 3}
+  m_PrefabInstance: {fileID: 455421189}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fa76f504ba5a4b742b75b253d61591db, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &472808946
 GameObject:
   m_ObjectHideFlags: 0
@@ -822,16 +894,16 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1261415799}
-        m_TargetAssemblyTypeName: Menu, Assembly-CSharp
-        m_MethodName: OptionsButton
-        m_Mode: 1
+      - m_Target: {fileID: 455421190}
+        m_TargetAssemblyTypeName: SceneController, Assembly-CSharp
+        m_MethodName: ChangeScene
+        m_Mode: 5
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: 
+          m_StringArgument: Options_Menu
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!114 &574519189
@@ -1437,16 +1509,16 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1261415799}
-        m_TargetAssemblyTypeName: Menu, Assembly-CSharp
-        m_MethodName: StartButton
-        m_Mode: 1
+      - m_Target: {fileID: 455421190}
+        m_TargetAssemblyTypeName: SceneController, Assembly-CSharp
+        m_MethodName: ChangeScene
+        m_Mode: 5
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: 
+          m_StringArgument: BACKUP lvl 1
           m_BoolArgument: 0
         m_CallState: 1
 --- !u!114 &694356840
@@ -2947,6 +3019,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1648397731}
+  - component: {fileID: 1648397732}
   m_Layer: 5
   m_Name: icons
   m_TagString: Untagged
@@ -2979,6 +3052,29 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!223 &1648397732
+Canvas:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1648397730}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_RenderMode: 2
+  m_Camera: {fileID: 0}
+  m_PlaneDistance: 100
+  m_PixelPerfect: 0
+  m_ReceivesEvents: 1
+  m_OverrideSorting: 1
+  m_OverridePixelPerfect: 0
+  m_SortingBucketNormalizedSize: 0
+  m_VertexColorAlwaysGammaSpace: 0
+  m_AdditionalShaderChannelsFlag: 0
+  m_UpdateRectTransformForStandalone: 0
+  m_SortingLayerID: 0
+  m_SortingOrder: 8
+  m_TargetDisplay: 0
 --- !u!1 &1730899374
 GameObject:
   m_ObjectHideFlags: 0

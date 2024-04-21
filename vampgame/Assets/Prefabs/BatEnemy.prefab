@@ -146,7 +146,7 @@ BoxCollider2D:
     m_Bits: 951
   m_ForceReceiveLayers:
     serializedVersion: 2
-    m_Bits: 951
+    m_Bits: 1015
   m_ContactCaptureLayers:
     serializedVersion: 2
     m_Bits: 4294967295
@@ -184,7 +184,13 @@ MonoBehaviour:
   drops:
   - name: Blue experience gem
     itemPrefab: {fileID: 3818719907670606838, guid: a0b111b4e492cdc44b2a415d00c0169e, type: 3}
-    dropRate: 50
+    dropRate: 80
+  - name: Health
+    itemPrefab: {fileID: 3818719907670606838, guid: 52027dbce1f585849991736d8ca911dc, type: 3}
+    dropRate: 5
+  - name: Lantern
+    itemPrefab: {fileID: 7099653750541138769, guid: 67341fc3ecb7baa42a0b1373da5dccba, type: 3}
+    dropRate: 1
 --- !u!95 &6716248842349955927
 Animator:
   serializedVersion: 5

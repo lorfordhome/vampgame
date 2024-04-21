@@ -9,6 +9,7 @@ TagManager:
   - boundary
   - Enemy
   - sword
+  - pickup
   layers:
   - Default
   - TransparentFX
@@ -20,8 +21,8 @@ TagManager:
   - Boundary
   - Foreground
   - Enemy
-  - 
-  - 
+  - Pickups
+  - Weapons
   - 
   - 
   - 

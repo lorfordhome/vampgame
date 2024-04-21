@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 2850620019578037234}
   - component: {fileID: -3200714809715586669}
   - component: {fileID: 2508124989661241038}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: sg lvl2 proj
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -75,7 +75,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -953278239
-  m_SortingLayer: 3
+  m_SortingLayer: 4
   m_SortingOrder: 0
   m_Sprite: {fileID: 906747837, guid: 13f044de2111b81448976547f0c1019d, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}

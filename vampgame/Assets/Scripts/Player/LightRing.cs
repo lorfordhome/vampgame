@@ -14,7 +14,7 @@ public class LightRing : MonoBehaviour
     public float growRate = 0.1f; //how fast the light can grow
     protected new Light2D light;
     PlayerStats player;
-    AudioSource audio;
+    private new AudioSource audio;
 
     public Vector3 minSize = new Vector3(0.1f, 0.1f, 0.1f); // min size is small enough that you cant see it
     public Vector3 maxSize = new Vector3(2.5f, 2.5f, 2.5f); //set max size as slightly bigger than initial size

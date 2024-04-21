@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 5772986496960806425}
   - component: {fileID: 8302217588897373537}
   - component: {fileID: 425567653254889640}
-  m_Layer: 6
+  m_Layer: 11
   m_Name: ShotgunController 2
   m_TagString: Untagged
   m_Icon: {fileID: 0}

@@ -1,4 +1,3 @@
-using UnityEditor.SearchService;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -35,7 +34,7 @@ public class Menu : MonoBehaviour
 
 	public void ControlsButton()
 	{
-		if (controlsScreen.active == true)
+		if (controlsScreen.activeInHierarchy == true)
 		{
 			controlsScreen.SetActive(false);
 		}
