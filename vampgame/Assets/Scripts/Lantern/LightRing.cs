@@ -16,8 +16,9 @@ public class LightRing : MonoBehaviour
 	public float refuelTime = 2f;	//how long the lantern will stay at full size after refuelling
 
 
-    public Vector3 minSize = new Vector3(0.1f, 0.1f, 0.1f); // min size is small enough that you cant see it
-    public Vector3 maxSize = new Vector3(3f, 3f, 3f);		//set max size as slightly bigger than initial size
+    private Vector3 minSize = new Vector3(0.1f, 0.1f, 0.1f); // min size is small enough that you cant see it
+    private Vector3 maxSize = new Vector3(3f, 3f, 3f);      //set max size as slightly bigger than initial size
+	
 
 	private bool Growing = false;
 
@@ -50,11 +51,9 @@ public class LightRing : MonoBehaviour
 		
 	}
 
-	
 	// Update is called once per frame
 	void Update()
     {
-		
 		if (Growing)
 		{
 			StartCoroutine(Refuel());
