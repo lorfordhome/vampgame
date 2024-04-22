@@ -16,4 +16,5 @@ public class FireBehaviour : ProjectileBehaviour
     {
         transform.position += direction * currentSpeed * Time.deltaTime; //set the movement of the fire
     }
+
 }

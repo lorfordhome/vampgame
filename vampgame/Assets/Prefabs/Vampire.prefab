@@ -15,9 +15,9 @@ GameObject:
   - component: {fileID: -936226749353230505}
   - component: {fileID: 8366271980343696660}
   - component: {fileID: 3293564874034465349}
-  - component: {fileID: -1285667129414612908}
+  - component: {fileID: 8410654317754137292}
   m_Layer: 9
-  m_Name: Bruiser
+  m_Name: Vampire
   m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -32,11 +32,11 @@ Transform:
   m_GameObject: {fileID: 7601273786654332976}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 6.5538, y: 0.1071, z: 0}
-  m_LocalScale: {x: 0.3, y: 0.24861318, z: 0.48676568}
+  m_LocalScale: {x: 0.5, y: 0.41435528, z: 0.81127614}
   m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 11
+  m_RootOrder: 12
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &7835616968349668095
 SpriteRenderer:
@@ -115,7 +115,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3ba40363bbb0e894882e795f146e9ca2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemyData: {fileID: 11400000, guid: 7584cf2ffc1d7e840b4f3a6a945d0f0f, type: 2}
+  enemyData: {fileID: 11400000, guid: f4cd1bff7bcb11546b0ddb6c999f6f60, type: 2}
   currentMoveSpeed: 0
   currentHealth: 0
   currentDamage: 0
@@ -143,10 +143,10 @@ BoxCollider2D:
   m_LayerOverridePriority: 0
   m_ForceSendLayers:
     serializedVersion: 2
-    m_Bits: 4294967295
+    m_Bits: 4023
   m_ForceReceiveLayers:
     serializedVersion: 2
-    m_Bits: 4294967295
+    m_Bits: 4023
   m_ContactCaptureLayers:
     serializedVersion: 2
     m_Bits: 4294967295
@@ -156,7 +156,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.20402515, y: -1.2587299}
+  m_Offset: {x: -0.17734504, y: -0.72352695}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.4883041, y: 0.6046863}
@@ -167,7 +167,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 5.0164413, y: 13.482542}
+  m_Size: {x: 4.2560296, y: 14.677053}
   m_EdgeRadius: 0
 --- !u!114 &8366271980343696660
 MonoBehaviour:
@@ -187,10 +187,10 @@ MonoBehaviour:
     dropRate: 100
   - name: Health
     itemPrefab: {fileID: 3818719907670606838, guid: 52027dbce1f585849991736d8ca911dc, type: 3}
-    dropRate: 20
+    dropRate: 80
   - name: Lantern
     itemPrefab: {fileID: 7099653750541138769, guid: 67341fc3ecb7baa42a0b1373da5dccba, type: 3}
-    dropRate: 15
+    dropRate: 80
 --- !u!95 &3293564874034465349
 Animator:
   serializedVersion: 5
@@ -212,7 +212,7 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
---- !u!50 &-1285667129414612908
+--- !u!50 &8410654317754137292
 Rigidbody2D:
   serializedVersion: 4
   m_ObjectHideFlags: 0
@@ -226,8 +226,8 @@ Rigidbody2D:
   m_UseAutoMass: 0
   m_Mass: 1
   m_LinearDrag: 0
-  m_AngularDrag: 0.05
-  m_GravityScale: 1
+  m_AngularDrag: 0
+  m_GravityScale: 0
   m_Material: {fileID: 0}
   m_IncludeLayers:
     serializedVersion: 2
@@ -238,4 +238,4 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Constraints: 4

@@ -13,8 +13,8 @@ MonoBehaviour:
   m_Name: ShotgunWeapon 5
   m_EditorClassIdentifier: 
   prefab: {fileID: 5989301914889811923, guid: b0245cc23a24dd14cb90675224acbbb6, type: 3}
-  damage: 4.5
-  speed: 11
+  damage: 5
+  speed: 12
   cooldownDuration: 1.5
   pierce: 99
   level: 6

@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: SwordData 2
   m_EditorClassIdentifier: 
   prefab: {fileID: 2994228159578169900, guid: 8daf9edc34fa72947bc3e5c528e44633, type: 3}
-  damage: 2
+  damage: 2.5
   speed: 1
   level: 3
   name: 

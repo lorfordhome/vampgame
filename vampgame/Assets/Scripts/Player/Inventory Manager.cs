@@ -196,7 +196,7 @@ public class InventoryManager : MonoBehaviour
             {
                 WeaponUpgrade chosenWeaponUpgrade = availableWeaponUpgrades[Random.Range(0, availableWeaponUpgrades.Count)];
                 availableWeaponUpgrades.Remove(chosenWeaponUpgrade);
-                if (chosenWeaponUpgrade != null)//does the weapon exist in the inventory?
+                if (chosenWeaponUpgrade != null)//prevent duplication
                 {
                     EnableUpgradeUI(upgradeOption);
                     bool newWeapon = false;

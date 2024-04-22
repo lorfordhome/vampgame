@@ -154,15 +154,16 @@ public class PlayerStats : MonoBehaviour
         {
             invincibilityTimer -= Time.deltaTime;
         }
+        else if (isInvincible)
+        {
+                isInvincible = false;
+        }
         if (soundTimer > 0)
         {
             soundTimer-= Time.deltaTime;
         }
         //if the invincibility timer has reached 0, end invincibility
-        else if (isInvincible)
-        {
-            isInvincible = false;
-        }
+       
     }
     private void Awake()
     {

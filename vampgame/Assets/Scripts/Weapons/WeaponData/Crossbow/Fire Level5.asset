@@ -13,8 +13,8 @@ MonoBehaviour:
   m_Name: Fire Level5
   m_EditorClassIdentifier: 
   prefab: {fileID: 8831150149325047858, guid: 56b292e7d31dcbc4790e0f9840364aab, type: 3}
-  damage: 2
-  speed: 10
+  damage: 2.5
+  speed: 6
   cooldownDuration: 0.4
   pierce: 2
   level: 5

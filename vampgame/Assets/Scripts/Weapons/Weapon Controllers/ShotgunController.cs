@@ -4,6 +4,9 @@ using UnityEngine;
 
 public class ShotgunController : ProjectileManager
 {
+
+    // Start is called before the first frame update
+    public float spawnOffset = 0.5f;
     protected override void Start()
     {
         base.Start();
@@ -13,7 +16,7 @@ public class ShotgunController : ProjectileManager
     {
         base.Attack();
         GameObject spawnedProjectile = Instantiate(weaponData.Prefab);
-        spawnedProjectile.transform.position = transform.position; //assign the position to be the same as this object 
+        spawnedProjectile.transform.position = new Vector3(transform.position.x + spawnOffset, transform.position.y + spawnOffset, transform.position.z); //assign the position to be the same as this object 
         spawnedProjectile.transform.rotation = fp.transform.rotation;
         spawnedProjectile.GetComponent<FireBehaviour>().DirectionChecker(fp.projdirection);
     }

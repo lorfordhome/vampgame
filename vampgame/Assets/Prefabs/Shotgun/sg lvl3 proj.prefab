@@ -46,7 +46,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   weaponData: {fileID: 11400000, guid: ba7c44539405e9843965057536e44f32, type: 2}
-  destroyAfterSeconds: 1
+  destroyAfterSeconds: 1.5
 --- !u!1001 &584702679448573342
 PrefabInstance:
   m_ObjectHideFlags: 0

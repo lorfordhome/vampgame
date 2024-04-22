@@ -12,13 +12,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: afa790d9c7af79a48b52f3c9d32f8288, type: 3}
   m_Name: ShotgunWeapon 1
   m_EditorClassIdentifier: 
-  prefab: {fileID: 7816406602440680091, guid: a6e838ef29e62d445a0f76d0f6ebdfd4, type: 3}
-  damage: 1
-  speed: 6
+  prefab: {fileID: 7816406602440680091, guid: 3b0951c710f541248b234e769b8ddad4, type: 3}
+  damage: 1.5
+  speed: 8
   cooldownDuration: 2.5
   pierce: 99
   level: 2
   nextLevelPrefab: {fileID: 2353372900197439488, guid: 33199f3e511330c44b650a89090c335e, type: 3}
   name: 'Holy Water                              Level: 2'
-  description: increase projectile size
+  description: increase projectile size, and water produces light
   icon: {fileID: 21300000, guid: df161287b24ea694091b97045c8dea56, type: 3}

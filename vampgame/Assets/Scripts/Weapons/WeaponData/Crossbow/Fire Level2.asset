@@ -13,9 +13,9 @@ MonoBehaviour:
   m_Name: Fire Level2
   m_EditorClassIdentifier: 
   prefab: {fileID: 8831150149325047858, guid: 56b292e7d31dcbc4790e0f9840364aab, type: 3}
-  damage: 1
-  speed: 8
-  cooldownDuration: 1
+  damage: 1.5
+  speed: 2
+  cooldownDuration: 0.8
   pierce: 1
   level: 2
   nextLevelPrefab: {fileID: 7313195699302866904, guid: a8c9b0882bea3f2419c44614f952e1e4, type: 3}

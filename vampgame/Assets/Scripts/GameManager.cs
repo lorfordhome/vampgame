@@ -39,7 +39,6 @@ public class GameManager : MonoBehaviour
         }
         levelUpSound= GetComponent<AudioSource>();
         DisableScreens();
-        Cursor.visible = false;
     }
     private void Update()
     {
@@ -75,7 +74,6 @@ public class GameManager : MonoBehaviour
     {
         if (currentState != GameState.Paused)
         {
-            Cursor.visible = true;
             previousState = currentState;
             ChangeState(GameState.Paused);
             Time.timeScale = 0f;
@@ -88,7 +86,6 @@ public class GameManager : MonoBehaviour
     {
         if (currentState == GameState.Paused)
         {
-            Cursor.visible = false;
             ChangeState(previousState);
             Time.timeScale = 1f;
             pauseScreen.SetActive(false);
@@ -113,7 +110,6 @@ public class GameManager : MonoBehaviour
 
     public void StartLevelUp()
     {
-        Cursor.visible = true;
         StartCoroutine(misclickPrevention());
         levelUpSound.Play();
         ChangeState(GameState.LevelUp);
@@ -121,7 +117,6 @@ public class GameManager : MonoBehaviour
     }
     public void EndLevelUp()
     {
-        Cursor.visible = false;
         choosingUpgrade = false;
         Time.timeScale = 1f;
         levelUpScreen.SetActive(false);
