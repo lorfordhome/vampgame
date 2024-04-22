@@ -1,5 +1,6 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class Menu : MonoBehaviour
 {
@@ -15,6 +16,25 @@ public class Menu : MonoBehaviour
 
     public GameObject controlsScreen;
 	public GameObject creditsScreen;
+	public GameObject optionsScreen;
+	
+	[SerializeField] Slider gameSlider;
+
+	private void Start()
+	{
+		gameSlider.value = 1f;
+	}
+	public void MuteButton()
+	{
+		gameSlider.value = 0f;
+		VolumeChange();
+
+	}
+	public void VolumeChange()
+	{
+		AudioListener.volume = gameSlider.value;
+		
+	}
     public void StartButton()
 	{
 		SceneManager.LoadScene(1); 
@@ -23,8 +43,14 @@ public class Menu : MonoBehaviour
 
 	public void OptionsButton()
 	{
-		//SceneManager.LoadScene("Options_Menu");	DEFUNCT AS NO LONGER USING A SEPARATE SCENE FOR OPTIONS
-		//Debug.Log("Options");
+		if (optionsScreen.activeInHierarchy == true)    //if optionsScreen is visible...
+		{
+			optionsScreen.SetActive(false);         //...make it not visible
+		}
+		else
+		{
+			optionsScreen.SetActive(true);          //...or if it isnt visible, make it visible
+		}
 	}
 
 	public void CreditsButton()
