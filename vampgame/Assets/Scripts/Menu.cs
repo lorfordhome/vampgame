@@ -14,6 +14,7 @@ public class Menu : MonoBehaviour
     //using scene index instead of name, can be changed if using numbers becomes confusing
 
     public GameObject controlsScreen;
+	public GameObject creditsScreen;
     public void StartButton()
 	{
 		SceneManager.LoadScene(1); 
@@ -22,8 +23,20 @@ public class Menu : MonoBehaviour
 
 	public void OptionsButton()
 	{
-		SceneManager.LoadScene("Options_Menu");
-		Debug.Log("Options");
+		//SceneManager.LoadScene("Options_Menu");	DEFUNCT AS NO LONGER USING A SEPARATE SCENE FOR OPTIONS
+		//Debug.Log("Options");
+	}
+
+	public void CreditsButton()
+	{
+		if (creditsScreen.activeInHierarchy == true)	//if creditsScreen is visible...
+		{
+			creditsScreen.SetActive(false);			//...make it not visible
+		}
+		else
+		{
+			creditsScreen.SetActive(true);			//...or if it isnt visible, make it visible
+		}
 	}
 
 	public void HomeButton()
@@ -34,13 +47,13 @@ public class Menu : MonoBehaviour
 
 	public void ControlsButton()
 	{
-		if (controlsScreen.activeInHierarchy == true)
+		if (controlsScreen.activeInHierarchy == true)	//if controlsScreen is visible...
 		{
-			controlsScreen.SetActive(false);
+			controlsScreen.SetActive(false);			//...make it not visible
 		}
 		else
 		{
-			controlsScreen.SetActive(true);
+			controlsScreen.SetActive(true);				//...or if it isnt visible, make it visible
 		}
     }
 

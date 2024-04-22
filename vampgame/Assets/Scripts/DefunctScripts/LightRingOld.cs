@@ -5,7 +5,7 @@ using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UIElements;
 
-public class LightRing : MonoBehaviour
+public class LightRingOld : MonoBehaviour
 {
 	public GameObject Fuel;     //Fuel is the "LanternFuel" game object
     public GameObject Lantern;  //Latern is the "LampLight" game object
