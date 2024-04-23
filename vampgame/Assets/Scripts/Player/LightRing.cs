@@ -9,7 +9,7 @@ using UnityEngine.UIElements;
 public class LightRing : MonoBehaviour
 {
 
-    public GameObject Lantern; 
+    //public GameObject Lantern; 
     public float shrinkRate = 0.05f; //how fast the light shrinks
     public float growRate = 0.1f; //how fast the light can grow
     protected new Light2D light;
@@ -24,38 +24,39 @@ public class LightRing : MonoBehaviour
     public float maxLuminosity = 1;
     bool isShrinking = false;
     bool nearDeath = false;
-    
+
 
     // Update is called once per frame
     private void Start()
     {
         light = GetComponent<Light2D>();
-        player=FindObjectOfType<PlayerStats>();
-        audio=GetComponent<AudioSource>();
+        player = FindObjectOfType<PlayerStats>();
+        audio = GetComponent<AudioSource>();
     }
     void FixedUpdate()
     {
-        if (Input.GetKey(KeyCode.L) )
+        if (Input.GetKey(KeyCode.L))
         {
             if (transform.localScale != minSize)
             {
                 ShrinkLight(shrinkRate);
 
-			}
+            }
         }
 
-		if (Input.GetKey(KeyCode.K))
-		{
-			if (transform.localScale != maxSize)
-			{
+        if (Input.GetKey(KeyCode.K))
+        {
+            if (transform.localScale != maxSize)
+            {
                 GrowLight(growRate);
 
-			}
-		}
+            }
+        }
         ShrinkLight(shrinkRate);
         if (transform.localScale.x <= (maxSize.x / 2))
         {
-            if (!isShrinking) {
+            if (!isShrinking)
+            {
                 StartCoroutine(fadeInAndOutRepeat(light, eachFadeTime, fadeWaitTime));
             }
         }
@@ -64,16 +65,16 @@ public class LightRing : MonoBehaviour
             nearDeath = false;
         }
 
-        if (transform.localScale.x <=(maxSize.x/10)&&(!nearDeath))
+        if (transform.localScale.x <= (maxSize.x / 10) && (!nearDeath))
         {
             audio.Play();
             nearDeath = true;
         }
         if (transform.localScale.x <= minSize.x)
         {
-                player.TakeDamage(20f);
+            player.TakeDamage(20f);
         }
-	}
+    }
     public void ShrinkLight(float shrink)
     {
         transform.localScale -= new Vector3(shrinkRate, shrinkRate, shrinkRate);
@@ -133,11 +134,11 @@ public class LightRing : MonoBehaviour
         while (transform.localScale.x <= (maxSize.x / 2))
         {
             //Fade out
-            yield return fadeInAndOut(lightToFade, false, duration * (transform.localScale.x/maxSize.x));
+            yield return fadeInAndOut(lightToFade, false, duration * (transform.localScale.x / maxSize.x));
             Debug.Log(transform.localScale.x / maxSize.x);
 
             //Wait
-            yield return new WaitForSeconds(waitTime* (transform.localScale.x / maxSize.x));
+            yield return new WaitForSeconds(waitTime * (transform.localScale.x / maxSize.x));
 
             //Fade-in 
             yield return fadeInAndOut(lightToFade, true, duration * (transform.localScale.x / maxSize.x));
@@ -146,3 +147,4 @@ public class LightRing : MonoBehaviour
         Debug.Log("FLICKERING DONE?");
     }
 }
+

@@ -21,4 +21,4 @@ MonoBehaviour:
   nextLevelPrefab: {fileID: 0}
   name: Holier Water
   description: give them a baptism they'll never forget
-  icon: {fileID: 21300000, guid: df161287b24ea694091b97045c8dea56, type: 3}
+  icon: {fileID: 21300000, guid: 87799c1f63d1740459bed466f44b0747, type: 3}

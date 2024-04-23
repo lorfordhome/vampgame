@@ -104,10 +104,7 @@ public class InventoryManager : MonoBehaviour
             weaponLevels[slotindex] = upgradedWeapon.GetComponent<ProjectileManager>().weaponData.Level;
 
             weaponUpgradeOptions[upgradeIndex].weaponData = upgradedWeapon.GetComponent<ProjectileManager>().weaponData;
-            if (GameManager.instance != null && GameManager.instance.choosingUpgrade)
-            {
                 GameManager.instance.EndLevelUp();
-            }
         }
     }
     public void LevelUpPassive(int slotindex, int upgradeIndex)
@@ -125,10 +122,7 @@ public class InventoryManager : MonoBehaviour
             Destroy(passive.gameObject);
             passiveLevels[slotindex] = upgradedPassive.GetComponent<PassiveItem>().passiveData.Level;
             passiveUpgradeOptions[upgradeIndex].passiveData = upgradedPassive.GetComponent<PassiveItem>().passiveData;
-            if (GameManager.instance != null && GameManager.instance.choosingUpgrade)
-            {
                 GameManager.instance.EndLevelUp();
-            }
         }
     }
     public void LevelUpSword()
@@ -144,10 +138,7 @@ public class InventoryManager : MonoBehaviour
         {
             sword.transform.localScale = new Vector3(1.5f, 1.5f, 1.5f);
         }
-        if (GameManager.instance != null && GameManager.instance.choosingUpgrade)
-        {
             GameManager.instance.EndLevelUp();
-        }
 
     }
 
