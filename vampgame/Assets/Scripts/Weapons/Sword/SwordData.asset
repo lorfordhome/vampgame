@@ -16,7 +16,7 @@ MonoBehaviour:
   damage: 1
   speed: 0.5
   level: 1
-  name: 
-  description: 
+  name: Stake
+  description: it's time to raise the stakes
   nextLevelPrefab: {fileID: 2994228159578169900, guid: 97fad4d4a54be7f4e8419ea10ed93055, type: 3}
-  icon: {fileID: 21300000, guid: 1611f0481e5120b42bbff5dad17322e7, type: 3}
+  icon: {fileID: 21300000, guid: ff7b864d2b11616459eb5b2880165b36, type: 3}

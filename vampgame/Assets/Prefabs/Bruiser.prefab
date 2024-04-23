@@ -32,11 +32,11 @@ Transform:
   m_GameObject: {fileID: 7601273786654332976}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 6.5538, y: 0.1071, z: 0}
-  m_LocalScale: {x: 0.3, y: 0.24861318, z: 0.48676568}
+  m_LocalScale: {x: 0.35, y: 0.2900487, z: 0.56789327}
   m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 11
+  m_RootOrder: 13
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &7835616968349668095
 SpriteRenderer:
@@ -79,7 +79,7 @@ SpriteRenderer:
   m_SortingLayerID: -953278239
   m_SortingLayer: 4
   m_SortingOrder: 0
-  m_Sprite: {fileID: -1711563337, guid: ffe83f72fa9d7cb4997ea907e76d0c95, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 82974150a27f7144a8d5f0f4d6bcef09, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -156,18 +156,18 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.20402515, y: -1.2587299}
+  m_Offset: {x: -0.20402527, y: -0.21719313}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.4883041, y: 0.6046863}
-    oldSize: {x: 6.8401976, y: 13.23}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 10.66, y: 14.17}
     newSize: {x: 2.17, y: 4.59}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 5.0164413, y: 13.482542}
+  m_Size: {x: 5.0164413, y: 13.372907}
   m_EdgeRadius: 0
 --- !u!114 &8366271980343696660
 MonoBehaviour:
@@ -187,10 +187,10 @@ MonoBehaviour:
     dropRate: 100
   - name: Health
     itemPrefab: {fileID: 3818719907670606838, guid: 52027dbce1f585849991736d8ca911dc, type: 3}
-    dropRate: 20
+    dropRate: 15
   - name: Lantern
     itemPrefab: {fileID: 7099653750541138769, guid: 67341fc3ecb7baa42a0b1373da5dccba, type: 3}
-    dropRate: 15
+    dropRate: 20
 --- !u!95 &3293564874034465349
 Animator:
   serializedVersion: 5
@@ -201,7 +201,7 @@ Animator:
   m_GameObject: {fileID: 7601273786654332976}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: cf1243f6502d37f4a82d3454baec8b71, type: 2}
+  m_Controller: {fileID: 9100000, guid: fc0ea14d7a1df134b9a6ca3335b702d1, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0

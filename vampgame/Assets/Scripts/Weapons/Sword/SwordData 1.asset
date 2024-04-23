@@ -16,7 +16,7 @@ MonoBehaviour:
   damage: 2
   speed: 0.5
   level: 2
-  name: 
+  name: 'Stake                                         Level: 2'
   description: increase damage and speed
   nextLevelPrefab: {fileID: 2994228159578169900, guid: f56a48754c04ab34fb2e88bbfa2c40d3, type: 3}
-  icon: {fileID: 21300000, guid: 1611f0481e5120b42bbff5dad17322e7, type: 3}
+  icon: {fileID: 21300000, guid: ff7b864d2b11616459eb5b2880165b36, type: 3}

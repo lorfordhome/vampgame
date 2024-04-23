@@ -32,6 +32,8 @@ public class PlayerMovement : MonoBehaviour
         {
             animator.SetBool("walkingleft", false);
             animator.SetBool("walkingright", false);
+            animator.SetBool("walkingup", false);
+            animator.SetBool("walkingdown", false);
             walkingSound.mute = true;
         }
         //sets direction of sprite
@@ -44,6 +46,16 @@ public class PlayerMovement : MonoBehaviour
         {
             animator.SetBool("walkingleft", false);
             animator.SetBool("walkingright", true);
+        }
+        if (vertical == -1)
+        {
+            animator.SetBool("walkingdown", true);
+            animator.SetBool("walkingup", false);
+        }
+        if (vertical == 1)
+        {
+            animator.SetBool("walkingdown", false);
+            animator.SetBool("walkingup", true);
         }
         GetComponent<Rigidbody2D>().position = body.position;
         firePoint.transform.position = body.position;

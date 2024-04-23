@@ -190,7 +190,7 @@ MonoBehaviour:
     dropRate: 5
   - name: Lantern
     itemPrefab: {fileID: 7099653750541138769, guid: 67341fc3ecb7baa42a0b1373da5dccba, type: 3}
-    dropRate: 1
+    dropRate: 5
 --- !u!95 &6716248842349955927
 Animator:
   serializedVersion: 5

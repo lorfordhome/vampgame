@@ -278,8 +278,8 @@ public class InventoryManager : MonoBehaviour
                     }
                     upgradeOption.upgradeButton.onClick.AddListener(() => LevelUpSword());
                     upgradeOption.upgradeIcon.sprite = chosenSwordUpgrade.swordData.Icon;
-                    upgradeOption.upgradeDescriptionDisplay.text = chosenSwordUpgrade.swordData.Description;
-                    upgradeOption.upgradeNameDisplay.text = chosenSwordUpgrade.swordData.Name;
+                    upgradeOption.upgradeDescriptionDisplay.text = chosenSwordUpgrade.swordData.NextLevelPrefab.GetComponent<SwordController>().swordData.Description;
+                    upgradeOption.upgradeNameDisplay.text = chosenSwordUpgrade.swordData.NextLevelPrefab.GetComponent<SwordController>().swordData.Name;
                 }
             }
         }

@@ -24,6 +24,7 @@ public class SceneController : MonoBehaviour
     }
     IEnumerator LoadScene(string sceneToLoad)
     {
+        Time.timeScale = 1.0f;
         transitionAnim.SetTrigger("End");
         yield return new WaitForSecondsRealtime(0.8f);
         AsyncOperation asyncLoad= SceneManager.LoadSceneAsync(sceneToLoad);
