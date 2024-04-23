@@ -7,14 +7,14 @@ EditorBuildSettings:
   m_Scenes:
   - enabled: 1
     path: Assets/Scenes/Main_Menu.unity
-    guid: cbc5b421183d0e440a6dfb8c490fb49d
+    guid: 29960048e65e1204c842e71090b8c08f
   - enabled: 1
     path: Assets/Scenes/BACKUP lvl 1.unity
     guid: 58d09318955f061419f7dd7861f67801
   - enabled: 0
     path: Assets/Scenes/Level_1.unity
     guid: 2cda990e2423bbf4892e6590ba056729
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Options_Menu.unity
     guid: fbb1c3619da35434ca126d43b8373ead
   - enabled: 1
