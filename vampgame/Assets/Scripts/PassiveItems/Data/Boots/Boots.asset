@@ -17,4 +17,4 @@ MonoBehaviour:
   nextLevelPrefab: {fileID: 3588790252096574659, guid: 9e2350ea37913244e97e301e00f1021e, type: 3}
   name: Boots
   description: vampires need cardio too
-  icon: {fileID: 21300000, guid: 7bbce922a2426734b9315ee2cf64b94a, type: 3}
+  icon: {fileID: -944402138, guid: 1d2160bd63df53444be23f4754c5af27, type: 3}

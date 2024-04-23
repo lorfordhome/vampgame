@@ -91,7 +91,6 @@ public class PlayerStats : MonoBehaviour
     {
         if (experience >= experienceCap)
         {
-            Debug.Log("Level up!");
             level++;
             experience -= experienceCap;
             int experienceCapIncrease = 0;
@@ -106,8 +105,6 @@ public class PlayerStats : MonoBehaviour
             experienceCap += experienceCapIncrease;
             GameManager.instance.StartLevelUp();
         }
-        Debug.Log(experience);
-        Debug.Log(experienceCap);
         _expbar.UpdateHealthBar(experienceCap, experience);
 
     }
@@ -115,9 +112,12 @@ public class PlayerStats : MonoBehaviour
     public void TakeDamage(float dmg)
     {
         StartCoroutine(DamageFlash());
+        Debug.Log("damage " + dmg);
+        Debug.Log(isInvincible);
  
         if (!isInvincible)
         {
+            Debug.Log("took damage");
             camera.GetComponent<ShakeCamera>().TriggerShake(0.2f);
             currentHealth -= dmg;
             _healthbar.UpdateHealthBar(characterData.MaxHealth, currentHealth);
@@ -132,15 +132,18 @@ public class PlayerStats : MonoBehaviour
             {
                 Kill();
             }
+            Debug.Log("health "+currentHealth);
         }
 
     }
     public void HealDamage(float heal)
     {
-        currentHealth+= heal;
+        currentHealth += heal;
+        if(currentHealth>characterData.MaxHealth)
+        {
+            currentHealth=characterData.MaxHealth;
+        }
         _healthbar.UpdateHealthBar(characterData.MaxHealth, currentHealth);
-        invincibilityTimer = invincibilityDuration;
-        isInvincible = true;
     }
     public void Kill()
     {
@@ -150,13 +153,14 @@ public class PlayerStats : MonoBehaviour
     }
     private void Update()
     {
-        if (invincibilityTimer > 0)
+        if (isInvincible&&invincibilityTimer<=0)
         {
-            invincibilityTimer -= Time.deltaTime;
+            Debug.Log("invincibility disabled");
+                isInvincible = false;
         }
         else if (isInvincible)
         {
-                isInvincible = false;
+            invincibilityTimer-=Time.deltaTime;
         }
         if (soundTimer > 0)
         {

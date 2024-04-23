@@ -17,4 +17,4 @@ MonoBehaviour:
   nextLevelPrefab: {fileID: 0}
   name: 'Boots                                          Level: 5'
   description: increase movement speed
-  icon: {fileID: 21300000, guid: 7bbce922a2426734b9315ee2cf64b94a, type: 3}
+  icon: {fileID: -944402138, guid: 1d2160bd63df53444be23f4754c5af27, type: 3}

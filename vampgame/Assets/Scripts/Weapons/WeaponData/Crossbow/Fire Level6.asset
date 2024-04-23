@@ -21,4 +21,4 @@ MonoBehaviour:
   nextLevelPrefab: {fileID: 0}
   name: Blessed Crossbow
   description: may holy light guide your bolts
-  icon: {fileID: 21300000, guid: a01dc62dc6e332345901974fe714ee7d, type: 3}
+  icon: {fileID: 21300000, guid: b8c5c9591c8e29944ac02fbd650a23e9, type: 3}

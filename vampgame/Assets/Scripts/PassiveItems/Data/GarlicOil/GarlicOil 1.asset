@@ -17,4 +17,4 @@ MonoBehaviour:
   nextLevelPrefab: {fileID: 7116834800423490280, guid: d43588a19bbe8604193bd111eb9c1017, type: 3}
   name: 'Garlic oil                                  Level: 2'
   description: increase all weapon damage
-  icon: {fileID: 21300000, guid: 043ece17c95a40c41a672bb7bc4d218d, type: 3}
+  icon: {fileID: 1190508197, guid: 4f1cffe15c31a414f8cd8df3cc326fd6, type: 3}
