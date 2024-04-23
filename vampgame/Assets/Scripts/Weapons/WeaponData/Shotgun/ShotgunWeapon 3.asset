@@ -21,4 +21,4 @@ MonoBehaviour:
   nextLevelPrefab: {fileID: 2353372900197439488, guid: be9a3efa257f5b54eba7135eb5752f4e, type: 3}
   name: 'Holy Water                              Level: 4'
   description: increase fire rate
-  icon: {fileID: 21300000, guid: df161287b24ea694091b97045c8dea56, type: 3}
+  icon: {fileID: 21300000, guid: 87799c1f63d1740459bed466f44b0747, type: 3}

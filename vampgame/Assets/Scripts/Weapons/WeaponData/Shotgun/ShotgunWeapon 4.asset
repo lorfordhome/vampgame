@@ -21,4 +21,4 @@ MonoBehaviour:
   nextLevelPrefab: {fileID: 2353372900197439488, guid: c49dbefb510370c438649f14b4fa5484, type: 3}
   name: 'Holy Water                              Level: 5'
   description: increase damage and speed
-  icon: {fileID: 21300000, guid: df161287b24ea694091b97045c8dea56, type: 3}
+  icon: {fileID: 21300000, guid: 87799c1f63d1740459bed466f44b0747, type: 3}
