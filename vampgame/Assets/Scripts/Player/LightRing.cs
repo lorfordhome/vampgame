@@ -53,7 +53,7 @@ public class LightRing : MonoBehaviour
             }
         }
         ShrinkLight(shrinkRate);
-        if (transform.localScale.x <= (maxSize.x / 2))
+        if (transform.localScale.x <= (maxSize.x / 2))//if the light is getting low, make it flicker. fun visual effect
         {
             if (!isShrinking)
             {
@@ -68,9 +68,9 @@ public class LightRing : MonoBehaviour
         if (transform.localScale.x <= (maxSize.x / 10) && (!nearDeath))
         {
             audio.Play();
-            nearDeath = true;
+            nearDeath = true;//sound effect plays to warn the palyer
         }
-        if (transform.localScale.x <= minSize.x)
+        if (transform.localScale.x <= minSize.x)//if the light is out, player takes damage 
         {
             player.TakeDamage(20f);
         }
@@ -131,7 +131,7 @@ public class LightRing : MonoBehaviour
         Debug.Log("FLICKERING");
         WaitForSeconds waitForXSec = new WaitForSeconds(waitTime);
 
-        while (transform.localScale.x <= (maxSize.x / 2))
+        while (transform.localScale.x <= (maxSize.x / 2))//only loops while the light is low.
         {
             //Fade out
             yield return fadeInAndOut(lightToFade, false, duration * (transform.localScale.x / maxSize.x));

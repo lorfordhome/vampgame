@@ -6,7 +6,6 @@ using static UnityEngine.GraphicsBuffer;
 
 public class FireController : ProjectileManager
 {
-    // Start is called before the first frame update
     public float spawnOffset=0.5f;
     public float shootingDistance=8f;
     Transform target;
@@ -22,6 +21,7 @@ public class FireController : ProjectileManager
 
     protected override void Attack()
     {
+        //wont fire if no enemies are available
         if (target != null)
         {
             base.Attack();

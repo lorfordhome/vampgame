@@ -26,7 +26,7 @@ public class SceneController : MonoBehaviour
     {
         Time.timeScale = 1.0f;
         transitionAnim.SetTrigger("End");
-        yield return new WaitForSecondsRealtime(0.8f);
+        yield return new WaitForSecondsRealtime(0.8f);//using realtime means it still works even when the game is paused
         AsyncOperation asyncLoad= SceneManager.LoadSceneAsync(sceneToLoad);
         while (!asyncLoad.isDone)
         {

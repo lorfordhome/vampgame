@@ -26,7 +26,7 @@ public class Pickups : MonoBehaviour
     protected virtual void Start()
     {
         initialPosition=transform.position;
-        initialOffset = Random.Range(0, bobbingAnimation.frequency);
+        initialOffset = Random.Range(0, bobbingAnimation.frequency);//they all start at a slightly different frame. looks cleaner
         collector=FindObjectOfType<Collector>();
     }
 

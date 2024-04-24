@@ -18,7 +18,7 @@ public class Collector : MonoBehaviour
     IEnumerator PlayAudio()
     {
         adSource.clip = adClips[adCount];
-        yield return new WaitForSeconds(0.2f);
+        yield return new WaitForSeconds(0.2f);//otherwise the [pickup sound plays before it reaches the player, which feels off
         adSource.Play();
         adCount++;
         if (adCount > 4)

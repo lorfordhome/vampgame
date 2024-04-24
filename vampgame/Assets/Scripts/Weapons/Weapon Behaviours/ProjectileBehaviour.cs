@@ -1,7 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-//Base script of all projectile behaviours. To be placed on a prefab of a projectil weapon.
+//Base script of all projectile behaviours to be placed on a prefab of projectile weapon
 public class ProjectileBehaviour : MonoBehaviour
 {
     protected Vector3 direction;
@@ -41,10 +41,6 @@ public class ProjectileBehaviour : MonoBehaviour
             enemy.TakeDamage(GetCurrentDamage(), transform.position);
             ReducePierce();
 
-        }
-        if (col.CompareTag("Collidable"))
-        {
-            this.gameObject.SetActive(false);
         }
     }
     void ReducePierce()//destroy once the pierce reaches 0

@@ -28,7 +28,7 @@ public class GameManager : MonoBehaviour
     public float UIDelay = 0.5f;
 
     private void Awake()
-    {
+    {//using a singleton means any script can access it
         if(instance == null)
         {
             instance = this;
@@ -130,7 +130,7 @@ public class GameManager : MonoBehaviour
         levelUpScreen.SetActive(false);
     }
 
-    IEnumerator misclickPrevention()
+    IEnumerator misclickPrevention()//small delay before the player can click after the upgrade screen activates. otherwise its too easy to misclick
     {
         Cursor.lockState = CursorLockMode.Locked;
         yield return new WaitForSecondsRealtime(UIDelay);

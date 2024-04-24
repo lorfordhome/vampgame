@@ -86,7 +86,7 @@ public class EnemyStats : MonoBehaviour
         es.OnEnemyKilled();
     }
 
-    void ReturnEnemy()
+    void ReturnEnemy()//this is called if the enemy gets too far away from the player
     {
         EnemySpawner es = FindObjectOfType<EnemySpawner>();
         transform.position = player.position + es.relativeSpawnPoints[Random.Range(0, es.relativeSpawnPoints.Count)].position;

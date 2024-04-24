@@ -4,6 +4,10 @@ using System.Runtime.CompilerServices;
 using UnityEngine;
 
 [CreateAssetMenu(fileName ="CharacterScriptableObject",menuName ="ScriptableObjects/Character")]
+
+
+// i made this a scriptable object because at the start of the project we were toying with the idea of having multiple characters
+//this was scrapped but it made the character stats easy to modify, and really came in useful when i made the passive items :)
 public class CharacterScriptableObject : ScriptableObject
 {
     [SerializeField]

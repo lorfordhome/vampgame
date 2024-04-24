@@ -4,16 +4,13 @@ using UnityEngine;
 
 public class ShakeCamera : MonoBehaviour
 {
-    // Transform of the GameObject you want to shake
     private new Transform shakeTransform;
 
-    // Desired duration of the shake effect
     private float shakeDuration = 0f;
 
-    // A measure of magnitude for the shake. Tweak based on your preference
     public float shakeMagnitude = 0.05f;
 
-    // A measure of how quickly the shake effect should evaporate
+    // how quickly the shake effect should evaporate
     public float dampingSpeed = 1.0f;
 
     // The initial position of the GameObject

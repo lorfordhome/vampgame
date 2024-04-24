@@ -12,7 +12,7 @@ public class InventoryManager : MonoBehaviour
     public int[] weaponLevels = new int[5];
     public List<UnityEngine.UI.Image> weaponUIslots=new List<UnityEngine.UI.Image>(2);
 
-    public List<PassiveItem> passiveSlots = new List<PassiveItem>(2);
+    public List<PassiveItem> passiveSlots = new List<PassiveItem>(4);
     public int[] passiveLevels = new int[5];
 
     public int swordLevel;
@@ -62,6 +62,7 @@ public class InventoryManager : MonoBehaviour
     {
         weaponSlots[slotindex] = weapon;
         weaponLevels[slotindex] = weapon.weaponData.Level;
+        //update the inventory ui
         weaponUIslots[slotindex].sprite = weapon.weaponData.Icon;
         weaponUIslots[slotindex].enabled = true;
         if (GameManager.instance != null && GameManager.instance.choosingUpgrade)
@@ -93,21 +94,23 @@ public class InventoryManager : MonoBehaviour
         if (weaponSlots.Count > slotindex)
         {
             ProjectileManager weapon = weaponSlots[slotindex];
-            if (!weapon.weaponData.NextLevelPrefab)
+            if (!weapon.weaponData.NextLevelPrefab)//failsafe. but this shouldnt happen
             {
                 Debug.LogError("NO NEXT LEVEL FOR" + weapon.name);
             }
             GameObject upgradedWeapon=Instantiate(weapon.weaponData.NextLevelPrefab, transform.position, Quaternion.identity);
-            upgradedWeapon.transform.SetParent(transform);
+            upgradedWeapon.transform.SetParent(transform);//so the object is transformed to the player
+            //add the upgraded weapon prefab, destroy the old one
             AddWeapon(slotindex,upgradedWeapon.GetComponent<ProjectileManager>());
             Destroy(weapon.gameObject);
+            //update internal weapon level
             weaponLevels[slotindex] = upgradedWeapon.GetComponent<ProjectileManager>().weaponData.Level;
-
+            //adds the next level of the new weapon to the weapon upgrade options - so the player can upgrade to the next level
             weaponUpgradeOptions[upgradeIndex].weaponData = upgradedWeapon.GetComponent<ProjectileManager>().weaponData;
                 GameManager.instance.EndLevelUp();
         }
     }
-    public void LevelUpPassive(int slotindex, int upgradeIndex)
+    public void LevelUpPassive(int slotindex, int upgradeIndex)//works the same as levelupweapon
     {
         if (passiveSlots.Count > slotindex)
         {
@@ -134,11 +137,12 @@ public class InventoryManager : MonoBehaviour
         Destroy(sword.gameObject);
         AddSword(upgradedSword.GetComponent<SwordController>());
         swordLevel =upgradedSword.GetComponent<SwordController>().swordData.Level;
-        if (swordLevel >= 6)
+        if (swordLevel >= 6)//forces lvl 6 sword to be larger
         {
             sword.transform.localScale = new Vector3(1.5f, 1.5f, 1.5f);
         }
-            GameManager.instance.EndLevelUp();
+        swordUpgradeOptions[0].swordData = upgradedSword.GetComponent<SwordController>().swordData;
+        GameManager.instance.EndLevelUp();
 
     }
 
@@ -146,7 +150,7 @@ public class InventoryManager : MonoBehaviour
     {
         return Random.Range(1, 4);
     }
-    void ApplyUpgradeOptions()
+    void ApplyUpgradeOptions()//has several bugs but i forgot to comment it and forgot how its meant to work... i dont have enough time to fix them all :(
     {
         List<WeaponUpgrade> availableWeaponUpgrades = new List<WeaponUpgrade>(weaponUpgradeOptions);
         List<PassiveUpgrade> availablePassiveUpgrades = new List<PassiveUpgrade>(passiveUpgradeOptions);

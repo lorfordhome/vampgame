@@ -115,7 +115,7 @@ public class PlayerStats : MonoBehaviour
         Debug.Log("damage " + dmg);
         Debug.Log(isInvincible);
  
-        if (!isInvincible)
+        if (!isInvincible)//wont take damage if iframes are active
         {
             Debug.Log("took damage");
             camera.GetComponent<ShakeCamera>().TriggerShake(0.2f);
@@ -139,7 +139,7 @@ public class PlayerStats : MonoBehaviour
     public void HealDamage(float heal)
     {
         currentHealth += heal;
-        if(currentHealth>characterData.MaxHealth)
+        if(currentHealth>characterData.MaxHealth)//ensures player cant heal beyond their max health
         {
             currentHealth=characterData.MaxHealth;
         }
@@ -148,7 +148,6 @@ public class PlayerStats : MonoBehaviour
     public void Kill()
     {
         Debug.Log("PLAYER DEAD");
-        Cursor.visible = true;
         SceneController.instance.ChangeScene("Game_Over");
     }
     private void Update()
@@ -162,7 +161,7 @@ public class PlayerStats : MonoBehaviour
         {
             invincibilityTimer-=Time.deltaTime;
         }
-        if (soundTimer > 0)
+        if (soundTimer > 0)//this basically just makes sure the hurt sound effect isnt constantly playing
         {
             soundTimer-= Time.deltaTime;
         }
@@ -189,7 +188,6 @@ public class PlayerStats : MonoBehaviour
             Debug.LogError("Inventory full");
             return;
         }
-        //spawn starting weapon
         GameObject spawnedWeapon = Instantiate(weapon, transform.position, Quaternion.identity);
         spawnedWeapon.transform.SetParent(transform);
         inventory.AddWeapon(weaponIndex, spawnedWeapon.GetComponent<ProjectileManager>());
@@ -203,7 +201,6 @@ public class PlayerStats : MonoBehaviour
             Debug.LogError("Inventory full");
             return;
         }
-        //spawn starting weapon
         GameObject spawnedPassive = Instantiate(passive, transform.position, Quaternion.identity);
         spawnedPassive.transform.SetParent(transform);
         inventory.AddPassive(weaponIndex, spawnedPassive.GetComponent<PassiveItem>());

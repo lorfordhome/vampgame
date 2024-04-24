@@ -52,13 +52,13 @@ public class lightflicker : MonoBehaviour
 
         while (true)
         {
-            //Fade out
+            //fade out
             yield return fadeInAndOut(lightToFade, false, duration);
 
-            //Wait
+            //wait
             yield return waitForXSec;
 
-            //Fade-in 
+            //fade-in 
             yield return fadeInAndOut(lightToFade, true, duration);
         }
     }

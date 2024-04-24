@@ -5,8 +5,7 @@ using UnityEngine;
 public class ShotgunController : ProjectileManager
 {
 
-    // Start is called before the first frame update
-    public float spawnOffset = 0.5f;
+    public float spawnOffset = 0.5f;//so it doesnt spawn directly on top of the player
     protected override void Start()
     {
         base.Start();

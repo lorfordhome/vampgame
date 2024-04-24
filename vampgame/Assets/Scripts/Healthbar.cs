@@ -10,11 +10,11 @@ public class Healthbar : MonoBehaviour
     [SerializeField] private float reduceSpeed = 2;
     private float target = 1;
 
-    public void UpdateHealthBar(float maxHealth, float currentHealth)
+    public void UpdateHealthBar(float maxHealth, float currentHealth)//called when the player takes damage
     {
         target=currentHealth/maxHealth;
     }
-    private void Update()
+    private void Update()//this makes a small animation effect just to make it look a little cleaner
     {
         _healthbarSprite.fillAmount = Mathf.MoveTowards(_healthbarSprite.fillAmount, target, reduceSpeed * Time.deltaTime);
     }
